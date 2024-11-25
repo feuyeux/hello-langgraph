@@ -13,7 +13,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_ollama import OllamaLLM
 
 vector_store = None
-
+os.environ['USER_AGENT'] = 'MyApp/1.0'
 
 def retrieve_node(state):
     print("---RETRIEVE---")
@@ -43,7 +43,7 @@ def retrieve_node(state):
             embedding=embedding,
         )
     retriever = vector_store.as_retriever()
-    documents = retriever.get_relevant_documents(question)
+    documents = retriever.invoke(question)
     return {"documents": documents, "question": question}
 
 
@@ -114,21 +114,17 @@ def transform_query_node(state):
     return {"documents": documents, "question": better_question}
 
 
-def web_search_tool():
-    return
-
-
 def web_search_node(state):
     print("---WEB SEARCH---")
     question = state["question"]
     documents = state["documents"]
 
-    # Web search
+    # Web search https://app.tavily.com/
     os.environ['TAVILY_API_KEY'] = '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'
     web_search_tool = TavilySearchResults(k=3)
     docs = web_search_tool.invoke({"query": question})
     web_results = "\n".join([d["content"] for d in docs])
-    web_results = Document(page_content=web_results)
+    web_results = Document(page_content=docs)
     documents.append(web_results)
 
     return {"documents": documents, "question": question}

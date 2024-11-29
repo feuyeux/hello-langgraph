@@ -1,16 +1,17 @@
 from pprint import pprint
-
 from graph_workflow import build_workflow
+from IPython.display import Image, display
 
 if __name__ == '__main__':
-    app = build_workflow().compile()
+    graph = build_workflow().compile()
+    display(Image(graph.get_graph().draw_mermaid_png()))
     questions = [
         "What are the types of agent memory?",
         "How does the AlphaCodium paper work?"
     ]
     for question in questions:
         inputs = {"question": question}
-        for output in app.stream(inputs):
+        for output in graph.stream(inputs):
             for key, value in output.items():
                 # Node
                 pprint(f"Node '{key}':")

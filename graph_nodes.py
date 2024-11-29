@@ -47,7 +47,6 @@ def retrieve_node(state):
     documents = retriever.invoke(question)
     return {"documents": documents, "question": question}
 
-
 def grade_doc_node(state):
     print("---CHECK DOCUMENT RELEVANCE TO QUESTION---")
     question = state["question"]

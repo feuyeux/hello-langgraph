@@ -17,12 +17,7 @@ bash install.sh
 Run
 
 ```sh
-# windows
-source graph_env/Scripts/activate
-# WSL|macOS
-source graph_env/bin/activate
-which python
-python hello_crag.py
+sh run_crag.sh
 ```
 
 juper notebook

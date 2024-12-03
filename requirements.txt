@@ -7,5 +7,5 @@ grandalf==0.8
 beautifulsoup4==4.12.3
 tiktoken==0.8.0
 gpt4all==2.8.2
-chromadb==0.5.20
+chromadb==0.5.21
 IPython==8.30.0

@@ -17,4 +17,4 @@ case "$(uname -s)" in
         exit 1
         ;;
 esac
-python hello_crag.py
+python hello_reflection.py

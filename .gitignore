@@ -76,7 +76,7 @@ dmypy.json
 .pytype/
 cython_debug/
 .idea/
-graph_env
+*_env
 .DS_Store
 *.dtmp
 *.bkp

@@ -4,7 +4,9 @@ from IPython.display import Image, display
 
 if __name__ == '__main__':
     graph = build_workflow().compile()
-    display(Image(graph.get_graph().draw_mermaid_png()))
+    img = Image(graph.get_graph().draw_mermaid_png())
+    with open("rag_graph.png", "wb") as f:
+        f.write(img.data)
     questions = [
         "What are the types of agent memory?",
         "How does the AlphaCodium paper work?"

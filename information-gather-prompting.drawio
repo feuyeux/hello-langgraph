@@ -1,0 +1,140 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram name="第 1 页" id="p0AbLA3D7n9_35eH_ECG">
+    <mxGraphModel dx="3591" dy="1917" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999900;fontColor=#095C86;fillColor=#F694C1;strokeWidth=2;" edge="1" parent="1" source="VyrBB0FQ8r9JwgVXcIiu-2" target="VyrBB0FQ8r9JwgVXcIiu-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-2" value="GeneratePrompt Node" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=18;fontFamily=Poppins;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-740" y="-975" width="300" height="357.5" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#999900;fontColor=#FFFFFF;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;fontFamily=Poppins;" edge="1" parent="1" source="VyrBB0FQ8r9JwgVXcIiu-4" target="VyrBB0FQ8r9JwgVXcIiu-35">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-675" y="-827.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-4" value="GatherInformation Node" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=18;fontFamily=Poppins;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" vertex="1" parent="1">
+          <mxGeometry x="-1740" y="-1007.5" width="460" height="422.5" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-5" value="Gather information" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=18;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1730" y="-965" width="440" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#003366;fontColor=#095C86;fillColor=#F694C1;" edge="1" parent="1" source="VyrBB0FQ8r9JwgVXcIiu-6" target="VyrBB0FQ8r9JwgVXcIiu-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeColor=#003366;fontColor=#095C86;fillColor=#F694C1;" edge="1" parent="1" source="VyrBB0FQ8r9JwgVXcIiu-6" target="VyrBB0FQ8r9JwgVXcIiu-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-6" value="llm.bind_tools" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1720" y="-738" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-7" value="&quot;&quot;&quot;Your job is to get information from a user about what type of prompt template they want to create.&#xa;You should get the following information from them:&#xa;- What the objective of the prompt is&#xa;- What variables will be passed into the prompt template&#xa;- Any constraints for what the output should NOT do&#xa;- Any requirements that the output MUST adhere to&#xa;If you are not able to discern this info, ask them to clarify! Do not attempt to wildly guess.&#xa;After you are able to discern all the information, call the relevant tool.&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1720" y="-925" width="410" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-8" value="llama3.2&#xa;&#xa;Ollama" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1720" y="-665" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-9" value="Generate Prompt" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=18;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-730" y="-932.75" width="280" height="297.5" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-10" value="&quot;&quot;&quot;Based on the following requirements, write a good prompt template:&#xa;{reqs}&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-720" y="-892.75" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-11" value="llama3.2&#xa;&#xa;Ollama" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-720" y="-707.75" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-12" value=" prompt | model" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-720" y="-775.25" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-24" value="INPUT" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#660033;fontFamily=Poppins;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-1270" y="-965" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-27" value="OUTPUT" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#660033;fontFamily=Poppins;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-550" y="-580" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-28" value="class PromptInstructions(BaseModel):&#xa;    &quot;&quot;&quot;Instructions on how to prompt the LLM.&quot;&quot;&quot;&#xa;&#xa;    objective: str&#xa;    variables: List[str]&#xa;    constraints: List[str]&#xa;    requirements: List[str]" style="rounded=0;whiteSpace=wrap;align=left;labelBackgroundColor=none;fillColor=#56517E;strokeColor=#EEEEEE;fontColor=#FFFFFF;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="-1580" y="-738" width="270" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-29" value="reqs=tool_call" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-720" y="-822.75" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.001;entryY=0.503;entryDx=0;entryDy=0;strokeColor=#999900;fontColor=#095C86;fillColor=#F694C1;strokeWidth=2;entryPerimeter=0;" edge="1" parent="1" target="VyrBB0FQ8r9JwgVXcIiu-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1780" y="-794.52" as="sourcePoint" />
+            <mxPoint x="-1750" y="-798.02" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-30" value="START" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="-1890" y="-822.75" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-31" value="END" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="-980" y="-584" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-33" value="Memory" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#F694C1;strokeColor=#AF45ED;fontColor=#095C86;fontFamily=Poppins;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-1890" y="-738" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-34" value="SystemMessage" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=none;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-570" y="-626.5" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999900;fontColor=#095C86;fillColor=#F694C1;strokeWidth=2;" edge="1" parent="1" source="VyrBB0FQ8r9JwgVXcIiu-35" target="VyrBB0FQ8r9JwgVXcIiu-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-35" value="AddToolMessage Node" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=18;fontFamily=Poppins;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;" vertex="1" parent="1">
+          <mxGeometry x="-1020" y="-865" width="220" height="137.5" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#999900;fontColor=#095C86;fillColor=#F694C1;strokeWidth=2;" edge="1" parent="1" source="VyrBB0FQ8r9JwgVXcIiu-39" target="VyrBB0FQ8r9JwgVXcIiu-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-1090" y="-796" />
+              <mxPoint x="-1090" y="-560" />
+              <mxPoint x="-1510" y="-560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.005;entryY=0.429;entryDx=0;entryDy=0;strokeColor=#999900;fontColor=#095C86;fillColor=#F694C1;strokeWidth=2;entryPerimeter=0;" edge="1" parent="1" target="VyrBB0FQ8r9JwgVXcIiu-31">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1120" y="-796" as="sourcePoint" />
+            <mxPoint x="-460" y="-565" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-1090" y="-796" />
+              <mxPoint x="-1090" y="-559" />
+              <mxPoint x="-979" y="-559" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-39" value="get_state" style="rounded=1;whiteSpace=wrap;strokeColor=#AF45ED;fontColor=#095C86;fillColor=default;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="-1190" y="-826.25" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.01;entryY=0.226;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#003366;fontColor=#095C86;fillColor=#F694C1;" edge="1" parent="1" source="VyrBB0FQ8r9JwgVXcIiu-6" target="VyrBB0FQ8r9JwgVXcIiu-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-48" value="ToolMessage" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#21C0A5;strokeColor=none;fontColor=#5C5C5C;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-900" y="-747.75" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-49" value="HumanMessage" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=center;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1305" y="-925" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-50" value="SystemMessage" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=none;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1030" y="-747.75" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-51" value="INPUT" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#660033;fontFamily=Poppins;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-1010" y="-707.75" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-52" value="OUTPUT" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#660033;fontFamily=Poppins;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-880" y="-705" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-53" value="AIMessage" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#182E3E;fillColor=#B1DDF0;labelBackgroundColor=none;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1260" y="-855" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-54" value="HumanMessage" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=center;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1260" y="-782.75" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VyrBB0FQ8r9JwgVXcIiu-55" value="AIMessage" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#182E3E;fillColor=#B1DDF0;labelBackgroundColor=none;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1300" y="-647.75" width="110" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

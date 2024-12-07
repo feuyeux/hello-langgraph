@@ -25,9 +25,8 @@ builder.add_edge("tools", "reasoner")
 react_graph = builder.compile()
 
 img = Image(react_graph.get_graph(xray=True).draw_mermaid_png())
-with open("graph.png", "wb") as f:
+with open("re_act_graph.png", "wb") as f:
     f.write(img.data)
-os.system("open graph.png")
 
 messages = [HumanMessage(content="5 * (2 + 3) / 2 = ?")]
 messages = react_graph.invoke({"messages": messages})

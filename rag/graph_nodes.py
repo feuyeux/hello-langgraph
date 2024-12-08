@@ -14,7 +14,7 @@ from langchain_ollama import OllamaLLM
 
 vector_store = None
 os.environ['USER_AGENT'] = 'MyApp/1.0'
-
+llm = OllamaLLM(model="llama3.2",num_gpu=1, format="json")
 
 def retrieve_node(state):
     print("---RETRIEVE---")
@@ -62,7 +62,6 @@ def grade_doc_node(state):
         Provide the binary score as a JSON with a single key 'score' and no premable or explanation.""",
         input_variables=["question", "document"],
     )
-    llm = OllamaLLM(model="llama3.2", temperature=0)
     retrieval_grader = prompt | llm | JsonOutputParser()
 
     # Score each doc
@@ -89,7 +88,6 @@ def generate_node(state):
     documents = state["documents"]
 
     prompt = hub.pull("rlm/rag-prompt")
-    llm = OllamaLLM(model="llama3.2", format="json", temperature=0)
     rag_chain = prompt | llm | StrOutputParser()
     generation = rag_chain.invoke({"context": documents, "question": question})
     return {"documents": documents, "question": question, "generation": generation}
@@ -106,7 +104,6 @@ def transform_query_node(state):
          Here is the initial question: \n\n {question}. Improved question with no preamble: \n """,
         input_variables=["generation", "question"],
     )
-    llm = OllamaLLM(model="llama3.2", temperature=0)
     question_rewriter = re_write_prompt | llm | StrOutputParser()
 
     question_rewriter.invoke({"question": question})

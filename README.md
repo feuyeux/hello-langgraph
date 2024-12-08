@@ -1,46 +1,29 @@
-# Hell LangGraph
-
-<https://langchain-ai.github.io/langgraph/>
-
-## Demo
-
-### Install
-
-```sh
-bash install.sh
-```
-
-### 1  [Corrective RAG (CRAG)](https://langchain-ai.github.io/langgraph/tutorials/rag/langgraph_crag_local/)
-
-![Corrective RAG](doc/Corrective_RAG.png)
-
-Run
-
-```sh
-cd hello_crag
-sh run_crag.sh
-```
-
-juper notebook
-
-[CRAG.ipynb](langgraph_crag_local.ipynb)
-
-### 2 ReAct
-
-![graph](hello_react/graph.png)
-
-Run
-
-```sh
-cd hello_react
-sh run_react.sh
-```
-
-### 3  [Hierarchical Teams](https://langchain-ai.github.io/langgraph/tutorials/multi_agent/hierarchical_agent_teams)
-
-[HierarchicalTeams.ipynb](hierarchical_agent_teams.ipynb)
+# Hello LangGraph
 
 ## Tutorials
 
-- <https://langchain-ai.github.io/langgraph/tutorials/>
-- <https://python.langchain.com/v0.2/docs/tutorials/>
+- [tutorials docs](https://langchain-ai.github.io/langgraph/tutorials/)
+- [tutorials code](https://github.com/langchain-ai/langgraph/tree/main/docs/docs/tutorials)
+
+### Chatbots
+
+1. [agent-simulation-evaluation.ipynb](agent-simulation-evaluation.ipynb)
+1. [information-gather-prompting.ipynb](information-gather-prompting.ipynb)
+
+### RAG
+>
+> [翁荔](https://x.com/lilianweng) 前OpenAI安全团队VP 本科毕业于北大 博士就读于印第安纳大学伯明顿分校 <https://www.bilibili.com/video/BV19dSHYUEAo>
+>
+> 她提出了Agent公式：Agent=大模型+记忆+主动规划+工具使用
+
+1. [agentic_rag.ipynb](agentic_rag.ipynb)
+
+### Patterns
+
+#### Reflection & Critique
+
+#### Planning
+
+#### Multi-Agent
+
+### Evaluation

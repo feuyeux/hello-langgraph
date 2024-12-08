@@ -1,0 +1,121 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram name="第 1 页" id="p0AbLA3D7n9_35eH_ECG">
+    <mxGraphModel dx="5239" dy="3259" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#999900;fontColor=#FFFFFF;strokeWidth=2;fontFamily=Poppins;" edge="1" parent="1" source="CAuOTROl_1rpEtvnlwR5-21" target="CAuOTROl_1rpEtvnlwR5-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-1145" y="-690" />
+              <mxPoint x="-1425" y="-690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-5" value="SimulatedUser Node" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=18;fontFamily=Poppins;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="-1085" y="-1130" width="545" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#CC0000;fontColor=#FFFFFF;strokeWidth=2;fontFamily=Poppins;" edge="1" parent="1" source="CAuOTROl_1rpEtvnlwR5-7" target="CAuOTROl_1rpEtvnlwR5-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1085" y="-900" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-1120" y="-901" />
+              <mxPoint x="-1120" y="-901" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-7" value="ChatBot Node" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=18;fontFamily=Poppins;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" vertex="1" parent="1">
+          <mxGeometry x="-1600" y="-1050" width="350" height="297.5" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-8" value="Chat Bot" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=18;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1590" y="-1000" width="330" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-9" value="ollama.chat" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1585" y="-910" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-10" value="You are a customer support agent for an airline." style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1585" y="-960" width="300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-11" value="llama3.2&#xa;&#xa;Ollama" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1585" y="-840" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-12" value="Simulated User" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=18;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1068" y="-1080" width="510" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-13" value="&quot;&quot;&quot;You are a customer of an airline company. \&#xa;You are interacting with a user who is a customer support person. \&#xa;{instructions}&#xa;When you are finished with the conversation, respond with a single word &#39;FINISHED&#39;&quot;&quot;&quot;&#xa;&#xa;instructions = &quot;&quot;&quot;Your name is Harrison. You are trying to get a refund for the trip you took to Alaska. \&#xa;You want them to give you ALL the money back. \&#xa;This trip happened 5 years ago.&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1058" y="-1040" width="490" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-14" value="llama3.2&#xa;&#xa;Ollama" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1058" y="-810" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-15" value=" prompt | model" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1058" y="-880" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-16" value="AIMessage" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#182E3E;fillColor=#B1DDF0;labelBackgroundColor=none;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1280" y="-800" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-17" value="system message" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=none;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1280" y="-960" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-18" value="HumanMessage" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=center;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1200" y="-1090" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-19" value="AIMessage" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#182E3E;fillColor=#B1DDF0;labelBackgroundColor=none;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1200" y="-1048" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-20" value="&lt;div style=&quot;color: rgb(59, 59, 59); background-color: rgb(255, 255, 255); line-height: 19px; white-space-collapse: preserve;&quot;&gt;should continue&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#182E3E;fontSize=14;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1115" y="-690" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-21" value="END" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="-1205" y="-620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999900;fontColor=#FFFFFF;strokeWidth=2;fontFamily=Poppins;" edge="1" parent="1" source="CAuOTROl_1rpEtvnlwR5-5" target="CAuOTROl_1rpEtvnlwR5-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-790" y="-720" as="sourcePoint" />
+            <mxPoint x="-1410" y="-752" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-810" y="-690" />
+              <mxPoint x="-1145" y="-690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-23" value="" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;strokeWidth=2;fontStyle=1;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1185" y="-730" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-24" value="Y" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#182E3E;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1260" y="-692" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-25" value="N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#182E3E;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1185" y="-650" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-26" value="HumanMessage" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=center;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="-732" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-27" value="INPUT" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#660033;fontFamily=Poppins;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-1245" y="-990" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-28" value="OUTPUT" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#660033;fontFamily=Poppins;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-1245" y="-830" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-29" value="INPUT" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#660033;fontFamily=Poppins;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-1260" y="-1090" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-30" value="OUTPUT" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#660033;fontFamily=Poppins;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-660" y="-720" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-31" value="START" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="-1600" y="-1140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CAuOTROl_1rpEtvnlwR5-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999900;fontColor=#FFFFFF;strokeWidth=2;fontFamily=Poppins;" edge="1" parent="1" source="CAuOTROl_1rpEtvnlwR5-31" target="CAuOTROl_1rpEtvnlwR5-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-1425" y="-1110" />
+            </Array>
+            <mxPoint x="-1135" y="-610" as="sourcePoint" />
+            <mxPoint x="-1415" y="-742" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

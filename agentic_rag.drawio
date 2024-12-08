@@ -1,11 +1,11 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
   <diagram name="第 1 页" id="JGTNSw7YOtRR2n-2OMZs">
-    <mxGraphModel dx="2571" dy="1176" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2261" dy="2005" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="DDGEUJCVJTAiT2eQpah1-75" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontFamily=Roboto;fontSize=18;labelBackgroundColor=none;fontColor=default;fontStyle=0;" parent="1" vertex="1">
-          <mxGeometry x="-253" y="159" width="340" height="350" as="geometry" />
+        <mxCell id="DDGEUJCVJTAiT2eQpah1-75" value="&lt;div style=&quot;color: rgb(59, 59, 59); background-color: rgb(255, 255, 255); line-height: 19px; white-space: pre;&quot;&gt;retriever_tool&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fontFamily=Poppins;fontSize=20;labelBackgroundColor=none;fontColor=default;fontStyle=0;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="-253" y="130" width="340" height="379" as="geometry" />
         </mxCell>
         <mxCell id="DDGEUJCVJTAiT2eQpah1-27" value="&lt;div style=&quot;line-height: 21px; white-space: pre; font-size: 18px;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;retriever&lt;/span&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;direction=south;fontFamily=Roboto;fontSize=18;fontColor=#004C99;labelBackgroundColor=none;fontStyle=1;" parent="1" vertex="1">
           <mxGeometry x="-25.5" y="184" width="95" height="120" as="geometry" />
@@ -315,6 +315,15 @@
         </mxCell>
         <mxCell id="1iUJSnH6xfMJlFEgh2Vq-12" value="&lt;span style=&quot;text-align: right; text-wrap: nowrap;&quot;&gt;GPT4All&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=middle;fontFamily=Roboto;fontSize=18;labelBackgroundColor=none;fontColor=#001933;fontStyle=0;strokeColor=#FFFFFF;fillColor=#e3c800;" parent="1" vertex="1">
           <mxGeometry x="-171" y="370" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="yjKrVfWp0t-8AR_mPXRf-1" value="Generater" style="rounded=0;whiteSpace=wrap;dashed=1;fontFamily=Poppins;fontSize=20;labelBackgroundColor=none;fontColor=#000000;fontStyle=0;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="110" y="-249" width="340" height="379" as="geometry" />
+        </mxCell>
+        <mxCell id="yjKrVfWp0t-8AR_mPXRf-2" value="ReWriter" style="rounded=0;whiteSpace=wrap;dashed=1;fontFamily=Poppins;fontSize=20;labelBackgroundColor=none;fontColor=#000000;fontStyle=0;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="501" y="-249" width="340" height="379" as="geometry" />
+        </mxCell>
+        <mxCell id="yjKrVfWp0t-8AR_mPXRf-3" value="&lt;div style=&quot;color: rgb(59, 59, 59); background-color: rgb(255, 255, 255); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space-collapse: preserve;&quot;&gt;&lt;span style=&quot;color: #795e26;&quot;&gt;grade_documents&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="360" y="-322" width="140" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

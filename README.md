@@ -5,6 +5,10 @@
 - [tutorials docs](https://langchain-ai.github.io/langgraph/tutorials/)
 - [tutorials code](https://github.com/langchain-ai/langgraph/tree/main/docs/docs/tutorials)
 
+Using ollama as LLM locally, and representing workflow details as:
+
+![README](README.png)
+
 ### Chatbots
 
 1. [agent-simulation-evaluation.ipynb](agent-simulation-evaluation.ipynb)
@@ -17,6 +21,9 @@
 > 她提出了Agent公式：Agent=大模型+记忆+主动规划+工具使用
 
 1. [agentic_rag.ipynb](agentic_rag.ipynb)
+1. [adaptive_rag.ipynb](adaptive_rag.ipynb)
+1. [crag.ipynb](crag.ipynb)
+
 
 ### Patterns
 

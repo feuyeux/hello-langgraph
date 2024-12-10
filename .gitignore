@@ -81,3 +81,4 @@ cython_debug/
 *.dtmp
 *.bkp
 chroma.sqlite3
+.vscode/

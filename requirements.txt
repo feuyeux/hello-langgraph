@@ -1,9 +1,8 @@
 langchain-core==0.3.24
 langchain==0.3.11
 langchain_community==0.3.11
-langchain-cohere==0.3.3
+langchain-openai==0.2.12
 langchain-ollama==0.2.1
-langchain-nomic==0.1.4
 langchainhub==0.1.21
 #
 langgraph==0.2.59

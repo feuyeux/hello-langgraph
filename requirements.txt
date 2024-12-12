@@ -6,7 +6,7 @@ langchain-ollama==0.2.1
 langchain-nomic==0.1.4
 langchainhub==0.1.21
 #
-langgraph==0.2.58
+langgraph==0.2.59
 #
 scikit-learn==1.6.0
 #

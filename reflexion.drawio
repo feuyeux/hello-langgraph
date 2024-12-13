@@ -1,0 +1,96 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram name="第 1 页" id="JGTNSw7YOtRR2n-2OMZs">
+    <mxGraphModel dx="6461" dy="4029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ScsCbn858ug2dNW6hYMq-3" value="Should Continue&#xa;Edge" style="rounded=0;whiteSpace=wrap;verticalAlign=middle;fontSize=20;fontFamily=Poppins;fontColor=#CC0066;strokeColor=#CC0066;" parent="1" vertex="1">
+          <mxGeometry x="-1310" y="-1031.745" width="220" height="113.5" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-37" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Poppins;" parent="1" source="ScsCbn858ug2dNW6hYMq-3" target="ScsCbn858ug2dNW6hYMq-19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-2" value="Generate Node" style="rounded=0;whiteSpace=wrap;fontFamily=Poppins;fontSize=20;labelBackgroundColor=none;fontColor=default;fontStyle=0;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="-2188" y="-1119.995" width="780" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="DDGEUJCVJTAiT2eQpah1-13" value="&lt;div style=&quot;font-size: 18px; line-height: 21px; white-space-collapse: preserve;&quot;&gt;&lt;br style=&quot;font-size: 18px;&quot;&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontFamily=Poppins;labelBackgroundColor=none;fontColor=default;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="-1719.75" y="-1066.56" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DDGEUJCVJTAiT2eQpah1-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=30;entryPerimeter=0;fontSize=18;fontFamily=Roboto;labelBackgroundColor=none;fontColor=default;fontStyle=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="-877.25" y="-60.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DDGEUJCVJTAiT2eQpah1-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Roboto;fontSize=18;labelBackgroundColor=none;fontColor=default;fontStyle=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-784.75" y="-60.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-9" value="llama3.2&#xa;&#xa;Ollama" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;fontFamily=Poppins;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-2110" y="-921.31" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-18" value="START" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-2440" y="-1006.81" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-19" value="END" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-1260" y="-811.74" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-20" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999900;fontColor=#FFFFFF;strokeWidth=2;fontFamily=Poppins;" parent="1" source="ScsCbn858ug2dNW6hYMq-18" target="ScsCbn858ug2dNW6hYMq-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2470" y="-2141.81" as="sourcePoint" />
+            <mxPoint x="-2415" y="-2081.81" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-51" value="AI MESSAGE" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#d0cee2;strokeColor=#56517e;align=center;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-2280" y="-921.31" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-55" value="HUMAN MESSAGE" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=center;spacingLeft=10;fontFamily=Poppins;fontStyle=0;verticalAlign=middle;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="-2280" y="-1078.81" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-59" value="[ prompt | llm ] .ainvoke" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontFamily=Poppins;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-2110" y="-989.06" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vCSyPXUICVTOdkfU3usH-1" value="&quot;You are an essay assistant tasked with writing excellent 5-paragraph essays.&quot;&#xa;            &quot; Generate the best essay possible for the user&#39;s request.&quot;&#xa;            &quot; If the user provides critique, respond with a revised version of your previous attempts.&quot;" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-2110" y="-1078.81" width="680" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vCSyPXUICVTOdkfU3usH-8" value="Reflect Node" style="rounded=0;whiteSpace=wrap;fontFamily=Poppins;fontSize=20;labelBackgroundColor=none;fontColor=default;fontStyle=0;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="-1000" y="-1115.03" width="780" height="280.07" as="geometry" />
+        </mxCell>
+        <mxCell id="vCSyPXUICVTOdkfU3usH-16" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Poppins;" parent="1" source="ScsCbn858ug2dNW6hYMq-2" target="ScsCbn858ug2dNW6hYMq-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1495" y="-898.74" as="sourcePoint" />
+            <mxPoint x="-1130" y="-791.74" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vCSyPXUICVTOdkfU3usH-17" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Poppins;" parent="1" source="ScsCbn858ug2dNW6hYMq-3" target="vCSyPXUICVTOdkfU3usH-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1485" y="-888.74" as="sourcePoint" />
+            <mxPoint x="-1120" y="-781.74" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vCSyPXUICVTOdkfU3usH-18" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Poppins;entryX=1;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="vCSyPXUICVTOdkfU3usH-8" target="ScsCbn858ug2dNW6hYMq-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1475" y="-878.74" as="sourcePoint" />
+            <mxPoint x="-1040" y="-821.74" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fKxt4CHwcqZsrzn-_JvP-1" value="llama3.2&#xa;&#xa;Ollama" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;fontFamily=Poppins;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="-970" y="-921.31" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fKxt4CHwcqZsrzn-_JvP-2" value="[ reflection_prompt | llm ] .ainvoke" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontFamily=Poppins;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="-970" y="-989.06" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fKxt4CHwcqZsrzn-_JvP-3" value="&quot;You are a teacher grading an essay submission. Generate critique and recommendations for the user&#39;s submission.&quot;&#xa;            &quot; Provide detailed recommendations, including requests for length, depth, style, etc.&quot;" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="-970" y="-1078.81" width="680" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="fKxt4CHwcqZsrzn-_JvP-4" value="AI MESSAGE" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#d0cee2;strokeColor=#56517e;align=center;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="-260" y="-1078.81" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fKxt4CHwcqZsrzn-_JvP-5" value="HUMAN MESSAGE" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=center;spacingLeft=10;fontFamily=Poppins;fontStyle=0;verticalAlign=middle;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-260" y="-921.31" width="150" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

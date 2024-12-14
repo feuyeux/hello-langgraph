@@ -1,6 +1,7 @@
 langchain-core==0.3.24
 langchain==0.3.11
-langchain_community==0.3.11
+langchain-community==0.3.11
+duckduckgo-search==6.4.1
 langchain-openai==0.2.12
 langchain-ollama==0.2.1
 langchainhub==0.1.21
@@ -8,8 +9,9 @@ langchainhub==0.1.21
 langgraph==0.2.59
 #
 scikit-learn==1.6.0
-#
+# graphs drawing
 grandalf==0.8
+# scrape information from web pages
 beautifulsoup4==4.12.3
 #
 chromadb==0.5.23

@@ -1,20 +1,44 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
   <diagram name="第 1 页" id="JGTNSw7YOtRR2n-2OMZs">
-    <mxGraphModel dx="6461" dy="4029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4817" dy="2049" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="ScsCbn858ug2dNW6hYMq-3" value="Should Continue&#xa;Edge" style="rounded=0;whiteSpace=wrap;verticalAlign=middle;fontSize=20;fontFamily=Poppins;fontColor=#CC0066;strokeColor=#CC0066;" parent="1" vertex="1">
-          <mxGeometry x="-1310" y="-1031.745" width="220" height="113.5" as="geometry" />
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-40" value="execute_tools" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=17;fontFamily=Nunito;strokeWidth=2;fontColor=#CC0066;" parent="1" vertex="1">
+          <mxGeometry x="-2270" y="-1098" width="565" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="ScsCbn858ug2dNW6hYMq-37" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Poppins;" parent="1" source="ScsCbn858ug2dNW6hYMq-3" target="ScsCbn858ug2dNW6hYMq-19" edge="1">
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-41" value="AnswerQuestion function" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=16;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-2225" y="-1059" width="250" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-39" value="revise=revisor.respond" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=17;fontFamily=Nunito;strokeWidth=2;fontColor=#CC0066;" parent="1" vertex="1">
+          <mxGeometry x="-3125" y="-578" width="1170" height="608" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-35" value="revision_chain" style="rounded=0;whiteSpace=wrap;verticalAlign=bottom;align=right;fontSize=14;fontFamily=Nunito;fontColor=#FF6666;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="-3107" y="-541" width="1070" height="461" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-36" value="revision_validator" style="rounded=0;whiteSpace=wrap;align=right;fontSize=14;fontFamily=Nunito;fontColor=#4D9900;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="-3107" y="-80" width="1070" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-37" value="PydanticToolsParser" style="rounded=0;whiteSpace=wrap;fontSize=16;fillColor=#56517E;fontColor=#FFFFCC;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-3095" y="-60" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-38" value="AnswerQuestion" style="rounded=0;whiteSpace=wrap;verticalAlign=middle;fontSize=16;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-2935" y="-60" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-20" value="draft=first_responder.respond" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=17;fontFamily=Nunito;strokeWidth=2;fontColor=#CC0066;" parent="1" vertex="1">
+          <mxGeometry x="-3125" y="-1150" width="735" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-13" value="AnswerQuestion" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=16;fontFamily=Nunito;fillColor=#56517E;fontColor=#FFFFCC;" parent="1" vertex="1">
+          <mxGeometry x="-3265" y="52" width="800" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-15" value="initial_answer_chain" style="rounded=0;whiteSpace=wrap;verticalAlign=middle;align=right;fontSize=14;fontFamily=Nunito;fontColor=#FF6666;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="-3107" y="-1120" width="650" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-3" value="event_loop" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=20;fontFamily=Nunito;fontColor=#CC0066;strokeColor=#CC0066;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="-2270" y="-890" width="485" height="121" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-37" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Nunito;" parent="1" source="ScsCbn858ug2dNW6hYMq-3" target="ScsCbn858ug2dNW6hYMq-19" edge="1">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="ScsCbn858ug2dNW6hYMq-2" value="Generate Node" style="rounded=0;whiteSpace=wrap;fontFamily=Poppins;fontSize=20;labelBackgroundColor=none;fontColor=default;fontStyle=0;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="-2188" y="-1119.995" width="780" height="290" as="geometry" />
-        </mxCell>
-        <mxCell id="DDGEUJCVJTAiT2eQpah1-13" value="&lt;div style=&quot;font-size: 18px; line-height: 21px; white-space-collapse: preserve;&quot;&gt;&lt;br style=&quot;font-size: 18px;&quot;&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontFamily=Poppins;labelBackgroundColor=none;fontColor=default;fontStyle=0;" parent="1" vertex="1">
-          <mxGeometry x="-1719.75" y="-1066.56" width="20" height="30" as="geometry" />
         </mxCell>
         <mxCell id="DDGEUJCVJTAiT2eQpah1-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=30;entryPerimeter=0;fontSize=18;fontFamily=Roboto;labelBackgroundColor=none;fontColor=default;fontStyle=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -27,68 +51,216 @@
             <mxPoint x="-784.75" y="-60.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ScsCbn858ug2dNW6hYMq-9" value="llama3.2&#xa;&#xa;Ollama" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;fontFamily=Poppins;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" parent="1" vertex="1">
-          <mxGeometry x="-2110" y="-921.31" width="150" height="60" as="geometry" />
+        <mxCell id="ScsCbn858ug2dNW6hYMq-18" value="START" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#A50040;fillColor=#d80073;fontFamily=Nunito;strokeWidth=2;fontStyle=1;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="-3290" y="-1043" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="ScsCbn858ug2dNW6hYMq-18" value="START" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="-2440" y="-1006.81" width="120" height="60" as="geometry" />
+        <mxCell id="ScsCbn858ug2dNW6hYMq-19" value="END" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#A50040;fillColor=#d80073;fontFamily=Nunito;strokeWidth=2;fontStyle=1;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="-2087.5" y="-720" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="ScsCbn858ug2dNW6hYMq-19" value="END" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="-1260" y="-811.74" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="ScsCbn858ug2dNW6hYMq-20" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999900;fontColor=#FFFFFF;strokeWidth=2;fontFamily=Poppins;" parent="1" source="ScsCbn858ug2dNW6hYMq-18" target="ScsCbn858ug2dNW6hYMq-2" edge="1">
+        <mxCell id="ScsCbn858ug2dNW6hYMq-20" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeColor=#999900;fontColor=#FFFFFF;strokeWidth=2;fontFamily=Nunito;edgeStyle=orthogonalEdgeStyle;" parent="1" source="ScsCbn858ug2dNW6hYMq-18" target="4OkaV6W8eaOgv4tztMEr-20" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-2470" y="-2141.81" as="sourcePoint" />
-            <mxPoint x="-2415" y="-2081.81" as="targetPoint" />
+            <mxPoint x="-3230" y="-2661.81" as="sourcePoint" />
+            <mxPoint x="-3175" y="-2601.81" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ScsCbn858ug2dNW6hYMq-51" value="AI MESSAGE" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#d0cee2;strokeColor=#56517e;align=center;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" parent="1" vertex="1">
-          <mxGeometry x="-2280" y="-921.31" width="150" height="60" as="geometry" />
+        <mxCell id="ScsCbn858ug2dNW6hYMq-55" value="&quot;\n\n&lt;system&gt;Reflect on the user&#39;s original question and the&quot;&#xa;&quot; actions taken thus far. Respond using the {function_name} function.&lt;/reminder&gt;&quot;" style="rounded=0;whiteSpace=wrap;strokeColor=default;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=left;spacingLeft=10;fontFamily=Nunito;fontStyle=0;verticalAlign=middle;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="-3090" y="-880" width="620" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="ScsCbn858ug2dNW6hYMq-55" value="HUMAN MESSAGE" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=center;spacingLeft=10;fontFamily=Poppins;fontStyle=0;verticalAlign=middle;fontSize=16;" parent="1" vertex="1">
-          <mxGeometry x="-2280" y="-1078.81" width="150" height="60" as="geometry" />
+        <mxCell id="ScsCbn858ug2dNW6hYMq-59" value="prompt |  llm.bind_tools" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontFamily=Nunito;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-3090" y="-810" width="190" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="ScsCbn858ug2dNW6hYMq-59" value="[ prompt | llm ] .ainvoke" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontFamily=Poppins;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" parent="1" vertex="1">
-          <mxGeometry x="-2110" y="-989.06" width="190" height="60" as="geometry" />
+        <mxCell id="vCSyPXUICVTOdkfU3usH-1" value="&quot;&quot;&quot;You are expert researcher.&lt;br&gt;Current time: {time}&lt;br&gt;1. {first_instruction}&lt;br&gt;2. &lt;b&gt;Reflect &lt;/b&gt;and &lt;b&gt;critique &lt;/b&gt;your answer. Be severe to maximize improvement.&lt;br&gt;3. Recommend &lt;b&gt;search queries&lt;/b&gt; to research information and improve your answer.&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Nunito;fontSize=15;verticalAlign=middle;fontStyle=0;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-3090" y="-1110" width="620" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="vCSyPXUICVTOdkfU3usH-1" value="&quot;You are an essay assistant tasked with writing excellent 5-paragraph essays.&quot;&#xa;            &quot; Generate the best essay possible for the user&#39;s request.&quot;&#xa;            &quot; If the user provides critique, respond with a revised version of your previous attempts.&quot;" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" parent="1" vertex="1">
-          <mxGeometry x="-2110" y="-1078.81" width="680" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="vCSyPXUICVTOdkfU3usH-8" value="Reflect Node" style="rounded=0;whiteSpace=wrap;fontFamily=Poppins;fontSize=20;labelBackgroundColor=none;fontColor=default;fontStyle=0;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="-1000" y="-1115.03" width="780" height="280.07" as="geometry" />
-        </mxCell>
-        <mxCell id="vCSyPXUICVTOdkfU3usH-16" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Poppins;" parent="1" source="ScsCbn858ug2dNW6hYMq-2" target="ScsCbn858ug2dNW6hYMq-3" edge="1">
+        <mxCell id="vCSyPXUICVTOdkfU3usH-16" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Nunito;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="4OkaV6W8eaOgv4tztMEr-20" target="4OkaV6W8eaOgv4tztMEr-40" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-1495" y="-898.74" as="sourcePoint" />
-            <mxPoint x="-1130" y="-791.74" as="targetPoint" />
+            <mxPoint x="-1495" y="-1807.74" as="sourcePoint" />
+            <mxPoint x="-1130" y="-1700.74" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="vCSyPXUICVTOdkfU3usH-17" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Poppins;" parent="1" source="ScsCbn858ug2dNW6hYMq-3" target="vCSyPXUICVTOdkfU3usH-8" edge="1">
+        <mxCell id="vCSyPXUICVTOdkfU3usH-18" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999900;strokeWidth=2;fontFamily=Nunito;entryX=0.75;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="4OkaV6W8eaOgv4tztMEr-39" target="ScsCbn858ug2dNW6hYMq-3" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-1485" y="-888.74" as="sourcePoint" />
-            <mxPoint x="-1120" y="-781.74" as="targetPoint" />
+            <mxPoint x="-2920" y="-1193.74" as="sourcePoint" />
+            <mxPoint x="-3260" y="-117.49999999999977" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="vCSyPXUICVTOdkfU3usH-18" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Poppins;entryX=1;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="vCSyPXUICVTOdkfU3usH-8" target="ScsCbn858ug2dNW6hYMq-19" edge="1">
+        <mxCell id="fKxt4CHwcqZsrzn-_JvP-4" value="AI MESSAGE" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#d0cee2;strokeColor=none;align=center;spacingLeft=10;fontFamily=Nunito;fontSize=16;verticalAlign=middle;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-3265" y="-341" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-1" value="duck_duck_go" style="rounded=0;whiteSpace=wrap;fontFamily=Nunito;fontSize=16;labelBackgroundColor=none;fontColor=#FFFFFF;fontStyle=0;verticalAlign=middle;fillColor=#56517E;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-2215" y="-1019" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-3" value="answer" style="rounded=1;whiteSpace=wrap;fontSize=14;fontFamily=Nunito;strokeColor=#FFFFCC;" parent="1" vertex="1">
+          <mxGeometry x="-2943" y="82" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-4" value="reflection" style="rounded=1;whiteSpace=wrap;fontSize=14;fontFamily=Nunito;fillColor=#fff2cc;strokeColor=#FFFFCC;" parent="1" vertex="1">
+          <mxGeometry x="-2943" y="116" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-5" value="Reflection" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=16;fontFamily=Nunito;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="-3250" y="200" width="395" height="144" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-6" value="missing" style="rounded=1;whiteSpace=wrap;fontSize=14;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-3240" y="254" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-7" value="superfluous" style="rounded=1;whiteSpace=wrap;fontSize=14;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-3240" y="294" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-8" value="search_queries" style="rounded=1;whiteSpace=wrap;fontSize=14;fontFamily=Nunito;strokeColor=#FFFFCC;" parent="1" vertex="1">
+          <mxGeometry x="-2943" y="150" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-9" value="time=lambda: datetime.datetime.now().isoformat()" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=14;align=left;spacingLeft=10;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-3090" y="-1000" width="330" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-10" value="first_instruction=&quot;Provide a detailed ~250 word answer.&quot;" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=14;align=left;spacingLeft=10;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-3090" y="-960" width="400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-12" value="function_name=AnswerQuestion.__name__" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=14;align=left;spacingLeft=10;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-3090" y="-920" width="310" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-14" value="AnswerQuestion" style="rounded=0;whiteSpace=wrap;verticalAlign=middle;fontSize=16;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-2900" y="-810" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-17" value="validator" style="rounded=0;whiteSpace=wrap;align=right;fontSize=14;fontFamily=Nunito;fontColor=#4D9900;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="-3107" y="-680" width="650" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-18" value="PydanticToolsParser" style="rounded=0;whiteSpace=wrap;fontSize=16;fillColor=#56517E;fontColor=#FFFFCC;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-3090" y="-675" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-19" value="AnswerQuestion" style="rounded=0;whiteSpace=wrap;verticalAlign=middle;fontSize=16;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-2930" y="-675" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-27" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;fontFamily=Nunito;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="4OkaV6W8eaOgv4tztMEr-23" target="4OkaV6W8eaOgv4tztMEr-13" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-1475" y="-878.74" as="sourcePoint" />
-            <mxPoint x="-1040" y="-821.74" as="targetPoint" />
+            <mxPoint x="-1645" y="34" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-2227" y="181" />
+              <mxPoint x="-2204" y="181" />
+              <mxPoint x="-2204" y="250" />
+              <mxPoint x="-2665" y="250" />
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="fKxt4CHwcqZsrzn-_JvP-1" value="llama3.2&#xa;&#xa;Ollama" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;fontFamily=Poppins;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" vertex="1" parent="1">
-          <mxGeometry x="-970" y="-921.31" width="150" height="60" as="geometry" />
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-23" value="ReviseAnswer" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=16;fontFamily=Nunito;fillColor=#56517E;fontColor=#FFFFCC;" parent="1" vertex="1">
+          <mxGeometry x="-2454.5" y="52" width="455" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="fKxt4CHwcqZsrzn-_JvP-2" value="[ reflection_prompt | llm ] .ainvoke" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontFamily=Poppins;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" vertex="1" parent="1">
-          <mxGeometry x="-970" y="-989.06" width="280" height="60" as="geometry" />
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-24" value="references" style="rounded=1;whiteSpace=wrap;fontSize=14;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-2448.5" y="165" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="fKxt4CHwcqZsrzn-_JvP-3" value="&quot;You are a teacher grading an essay submission. Generate critique and recommendations for the user&#39;s submission.&quot;&#xa;            &quot; Provide detailed recommendations, including requests for length, depth, style, etc.&quot;" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" vertex="1" parent="1">
-          <mxGeometry x="-970" y="-1078.81" width="680" height="80" as="geometry" />
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-28" value="&quot;&quot;&quot;You are expert researcher.&lt;br&gt;Current time: {time}&lt;br&gt;1. {first_instruction}&lt;br&gt;2.&amp;nbsp;&lt;b&gt;Reflect&amp;nbsp;&lt;/b&gt;and&amp;nbsp;&lt;b&gt;critique&amp;nbsp;&lt;/b&gt;your answer. Be severe to maximize improvement.&lt;br&gt;3. Recommend&amp;nbsp;&lt;b&gt;search queries&lt;/b&gt;&amp;nbsp;to research information and improve your answer.&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Nunito;fontSize=15;verticalAlign=middle;fontStyle=0;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-3100" y="-531" width="620" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="fKxt4CHwcqZsrzn-_JvP-4" value="AI MESSAGE" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#d0cee2;strokeColor=#56517e;align=center;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" vertex="1" parent="1">
-          <mxGeometry x="-260" y="-1078.81" width="150" height="60" as="geometry" />
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-29" value="function_name=ReviseAnswer.__name__" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=14;align=left;spacingLeft=10;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-3100" y="-251" width="310" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="fKxt4CHwcqZsrzn-_JvP-5" value="HUMAN MESSAGE" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=center;spacingLeft=10;fontFamily=Poppins;fontStyle=0;verticalAlign=middle;fontSize=16;" vertex="1" parent="1">
-          <mxGeometry x="-260" y="-921.31" width="150" height="60" as="geometry" />
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-30" value="llama3.3&#xa;&#xa;Ollama" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;fontFamily=Nunito;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0;spacingTop=10;spacingBottom=10;" parent="1" vertex="1">
+          <mxGeometry x="-3090" y="-750" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-31" value="AnswerQuestion" style="rounded=0;whiteSpace=wrap;verticalAlign=middle;fontSize=16;fontFamily=Nunito;fillColor=#56517E;fontColor=#FFFFCC;" parent="1" vertex="1">
+          <mxGeometry x="-2900" y="-810" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-32" value="prompt |  llm.bind_tools" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontFamily=Nunito;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-2472.5" y="-211" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-33" value="llama3.3&#xa;&#xa;Ollama" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;fontFamily=Nunito;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0;spacingTop=10;spacingBottom=10;" parent="1" vertex="1">
+          <mxGeometry x="-2472.5" y="-151" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-34" value="ReviseAnswer" style="rounded=0;whiteSpace=wrap;verticalAlign=middle;fontSize=16;fontFamily=Nunito;fillColor=#56517E;fontColor=#FFFFCC;" parent="1" vertex="1">
+          <mxGeometry x="-2282.5" y="-211" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-42" value="batch" style="rounded=0;whiteSpace=wrap;verticalAlign=middle;fontSize=16;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-2065" y="-1019" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-43" value="ReviseAnswer function" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=16;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-1965" y="-1059" width="250" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-44" value="TavilySearch" style="rounded=0;whiteSpace=wrap;fontFamily=Nunito;fontSize=16;labelBackgroundColor=none;fontColor=#FFFFFF;fontStyle=0;verticalAlign=middle;fillColor=#56517E;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-1955" y="-1019" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-45" value="batch" style="rounded=0;whiteSpace=wrap;verticalAlign=middle;fontSize=16;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-1805" y="-1019" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-46" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999900;strokeWidth=2;fontFamily=Nunito;entryX=1;entryY=0.25;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;exitX=0.912;exitY=0.988;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="4OkaV6W8eaOgv4tztMEr-40" target="4OkaV6W8eaOgv4tztMEr-39" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-3260" y="-298.909090909091" as="sourcePoint" />
+            <mxPoint x="-3780" y="-289" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-1755" y="-440" />
+              <mxPoint x="-1755" y="-440" />
+              <mxPoint x="-1755" y="-426" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-47" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999900;strokeWidth=2;fontFamily=Nunito;entryX=0.43;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;" parent="1" source="ScsCbn858ug2dNW6hYMq-3" target="4OkaV6W8eaOgv4tztMEr-40" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2385" y="-689" as="sourcePoint" />
+            <mxPoint x="-2065" y="-949" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-48" value="not in {&quot;tool&quot;, &quot;ai&quot;}" style="whiteSpace=wrap;fontSize=14;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-2162.5" y="-850.5" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-49" value="&gt; MAX_ITERATIONS" style="rhombus;whiteSpace=wrap;fontSize=13;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-1990" y="-863.5" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-50" value="i += 1" style="whiteSpace=wrap;fontSize=14;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-2247.5" y="-850.5" width="75" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-51" value="AI MESSAGE" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#d0cee2;strokeColor=none;align=center;spacingLeft=10;fontFamily=Nunito;fontSize=16;verticalAlign=middle;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-3265" y="-690" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-52" value="HUMAN MESSAGE" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=center;spacingLeft=10;fontFamily=Nunito;fontStyle=0;verticalAlign=middle;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="-3265" y="-819" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-53" value="HUMAN MESSAGE" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=center;spacingLeft=10;fontFamily=Nunito;fontStyle=0;verticalAlign=middle;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="-3265" y="-410" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-54" value="&quot;\n\n&lt;system&gt;Reflect on the user&#39;s original question and the&quot;&#xa;&quot; actions taken thus far. Respond using the {function_name} function.&lt;/reminder&gt;&quot;" style="rounded=0;whiteSpace=wrap;strokeColor=default;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=left;spacingLeft=10;fontFamily=Nunito;fontStyle=0;verticalAlign=middle;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="-3100" y="-211" width="620" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-21" value="first_instruction=&lt;br&gt;&quot;&quot;&quot;Revise your previous answer using the new information.&lt;br&gt;&amp;nbsp; &amp;nbsp; - You should use the previous critique to add important information to your answer.&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; - You MUST include &lt;b&gt;numerical citations&lt;/b&gt; in your revised answer to ensure it can be verified.&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; - Add a &quot;References&quot; section to the bottom of your answer (which does not count towards the word limit). In form of:&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; - [1] https://example.com&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; - [2] https://example.com&lt;br&gt;&amp;nbsp; &amp;nbsp; - You should use the previous critique to &lt;b&gt;remove superfluous information&lt;/b&gt; from your answer and make SURE it is not more than 250 words.&lt;br&gt;&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Nunito;fontSize=15;verticalAlign=middle;fontStyle=0;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-3100" y="-421" width="1050" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-55" value="&lt;font color=&quot;#ff6666&quot;&gt;run&amp;nbsp;&lt;/font&gt;&amp;amp;&amp;nbsp;&lt;font color=&quot;#4d9900&quot;&gt;validate&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;MAX_CRITIQUES&amp;nbsp;&lt;/span&gt;&amp;nbsp;times&lt;/div&gt;" style="whiteSpace=wrap;fontSize=14;html=1;textDirection=vertical-rl;" parent="1" vertex="1">
+          <mxGeometry x="-2457" y="-1120" width="50" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-65" value="&quot;&quot;&quot;Answer the question. Provide an answer, reflection, and then follow up with search queries to improve the answer.&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=14;align=left;spacingLeft=10;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-3259" y="82" width="310" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-66" value="&quot;~250 word detailed answer to the question.&quot;" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=14;align=left;spacingLeft=10;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-2815" y="82" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-67" value="&quot;1-3 search queries for researching improvements to address the critique of your current answer.&quot;" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=14;align=left;spacingLeft=10;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-2815" y="150" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-68" value="&quot;Your reflection on the initial answer.&quot;" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=14;align=left;spacingLeft=10;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-2815" y="116" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-69" value="&quot;Citations motivating your updated answer.&quot;" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=14;align=left;spacingLeft=10;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-2322.5" y="165" width="315" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-70" value="&quot;Critique of what is missing.&quot;" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=14;align=left;spacingLeft=10;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-3110" y="254" width="215" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-71" value="&quot;Critique of what is superfluous&quot;" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=14;align=left;spacingLeft=10;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-3110" y="297" width="245" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-72" value="&lt;font color=&quot;#ff6666&quot;&gt;run &lt;/font&gt;&amp;amp; &lt;font color=&quot;#4d9900&quot;&gt;validate&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;MAX_CRITIQUES&amp;nbsp;&lt;/span&gt;&amp;nbsp;times&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=14;textDirection=vertical-rl;" parent="1" vertex="1">
+          <mxGeometry x="-2037" y="-541" width="50" height="551" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-73" value="TOOL MESSAGE" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#b1ddf0;strokeColor=none;align=center;spacingLeft=10;fontFamily=Nunito;fontSize=16;verticalAlign=middle;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="-3265" y="-271" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-74" value="AI MESSAGE" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#d0cee2;strokeColor=none;align=center;spacingLeft=10;fontFamily=Nunito;fontSize=16;verticalAlign=middle;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-3265" y="-141" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-75" value="TOOL MESSAGE" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#b1ddf0;strokeColor=none;align=center;spacingLeft=10;fontFamily=Nunito;fontSize=16;verticalAlign=middle;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="-2380" y="-1001" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4OkaV6W8eaOgv4tztMEr-76" value="AI MESSAGE" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#d0cee2;strokeColor=none;align=center;spacingLeft=10;fontFamily=Nunito;fontSize=16;verticalAlign=middle;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-2380" y="-1085" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AaQflVm-CV8Sz6blauBk-1" value="&quot;&quot;&quot;Revise your original answer to your question. Provide an answer, reflection,&#xa;    cite your reflection with references, and finally&#xa;    add search queries to improve the answer.&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=14;align=left;spacingLeft=10;fontFamily=Nunito;" parent="1" vertex="1">
+          <mxGeometry x="-2448.5" y="82" width="358.5" height="68" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

@@ -1,4 +1,3 @@
-from IPython.display import Image, display
 from typing_extensions import TypedDict
 from typing import Annotated
 from langgraph.graph.message import add_messages
@@ -11,7 +10,7 @@ from pydantic import BaseModel, Field
 from pydantic import ValidationError
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers.openai_tools import PydanticToolsParser
-from langchain_core.messages import HumanMessage, ToolMessage
+from langchain_core.messages import ToolMessage
 from dotenv import load_dotenv
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_community.utilities.tavily_search import TavilySearchAPIWrapper
@@ -21,6 +20,8 @@ from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
 
 load_dotenv()
 
+MAX_CRITIQUES = 1
+MAX_ITERATIONS = 2
 model_name = "llama3.3"
 llm = ChatOpenAI(
     model=model_name,
@@ -35,7 +36,7 @@ tavily = TavilySearchResults(
 duck_duck_go = DuckDuckGoSearchResults(
     api_wrapper=DuckDuckGoSearchAPIWrapper(), max_results=5)
 
-search_tool = tavily
+search_tools = [duck_duck_go, tavily]
 
 
 class Reflection(BaseModel):
@@ -62,13 +63,18 @@ class ResponderWithRetries:
 
     def respond(self, state: list):
         response = []
-        for attempt in range(3):
+        for attempt in range(MAX_CRITIQUES):
+            start_time = datetime.datetime.now()
             response = self.runnable.invoke(
-                {"messages": state["messages"]}, {
-                    "tags": [f"attempt:{attempt}"]}
+                {"messages": state["messages"]},
+                {"tags": [f"attempt:{attempt}"]}
             )
+            end_time = datetime.datetime.now()
+            print(f"{attempt} RESPONSE({end_time-start_time} ms):")
+            print(response)
             try:
                 self.validator.invoke(response)
+                print("VALIDATED")
                 return {"messages": response}
             except ValidationError as e:
                 # schema_json = self.validator.schema_json()
@@ -80,7 +86,9 @@ class ResponderWithRetries:
                     + " Respond by fixing all validation errors.",
                     tool_call_id=response.tool_calls[0]["id"],
                 )
-                state["messages"] = state["messages"] + [response, message]
+                state["messages"] += [response, message]
+                print(f"{attempt} STATE:")
+                print(state)
         return {"messages": response}
 
 
@@ -105,22 +113,19 @@ Current time: {time}
 ).partial(
     time=lambda: datetime.datetime.now().isoformat(),
 )
+
 initial_answer_chain = actor_prompt_template.partial(
     first_instruction="Provide a detailed ~250 word answer.",
     function_name=AnswerQuestion.__name__,
 ) | llm.bind_tools(tools=[AnswerQuestion])
+
 validator = PydanticToolsParser(tools=[AnswerQuestion])
 
 first_responder = ResponderWithRetries(
     runnable=initial_answer_chain, validator=validator
 )
 
-example_question = "Why is reflection useful in AI?"
-initial = first_responder.respond(
-    {"messages": [HumanMessage(content=example_question)]}
-)
-print(initial["messages"])
-
+# 修订指令
 revise_instructions = """Revise your previous answer using the new information.
     - You should use the previous critique to add important information to your answer.
         - You MUST include numerical citations in your revised answer to ensure it can be verified.
@@ -131,6 +136,8 @@ revise_instructions = """Revise your previous answer using the new information.
 """
 
 
+# 修订答案
+# Citations 引用
 # Extend the initial answer schema to include references.
 # Forcing citation in the model encourages grounded responses
 class ReviseAnswer(AnswerQuestion):
@@ -154,39 +161,19 @@ revisor = ResponderWithRetries(
     runnable=revision_chain, validator=revision_validator)
 
 
-revised = revisor.respond(
-    {
-        "messages": [
-            HumanMessage(content=example_question),
-            initial["messages"],
-            ToolMessage(
-                tool_call_id=initial["messages"].tool_calls[0]["id"],
-                content=json.dumps(
-                    search_tool.invoke(
-                        {
-                            "query": initial["messages"].tool_calls[0]["args"][
-                                "search_queries"
-                            ][0]
-                        }
-                    )
-                ),
-            ),
-        ]
-    }
-)
-print(revised["messages"])
-
-
 def run_queries(search_queries: list[str], **kwargs):
     """Run the generated queries."""
-    return search_tool.batch([{"query": query} for query in search_queries])
+    return search_tools[0].batch([{"query": query} for query in search_queries])
 
+
+def run_queries2(search_queries: list[str], **kwargs):
+    """Run the generated queries."""
+    return search_tools[1].batch([{"query": query} for query in search_queries])
 
 tool_node = ToolNode(
     [
-        StructuredTool.from_function(
-            run_queries, name=AnswerQuestion.__name__),
-        StructuredTool.from_function(run_queries, name=ReviseAnswer.__name__),
+        StructuredTool.from_function(run_queries, name=AnswerQuestion.__name__),
+        StructuredTool.from_function(run_queries2, name=ReviseAnswer.__name__),
     ]
 )
 
@@ -195,7 +182,6 @@ class State(TypedDict):
     messages: Annotated[list, add_messages]
 
 
-MAX_ITERATIONS = 5
 builder = StateGraph(State)
 builder.add_node("draft", first_responder.respond)
 
@@ -207,9 +193,7 @@ builder.add_edge("draft", "execute_tools")
 builder.add_edge("execute_tools", "revise")
 
 
-# Define looping logic:
-
-
+# Define looping logic: if we have revised N times, stop
 def _get_num_iterations(state: list):
     i = 0
     for m in state[::-1]:
@@ -231,17 +215,9 @@ def event_loop(state: list):
 builder.add_conditional_edges("revise", event_loop, ["execute_tools", END])
 builder.add_edge(START, "draft")
 graph = builder.compile()
-
-
-try:
-    display(Image(graph.get_graph().draw_mermaid_png()))
-except Exception:
-    # This requires some extra dependencies and is optional
-    pass
-
-messages = [("user", "中国应该怎么做，才能赢得世界的尊重，能与他国和谐相处？")]
+query = "How to improve the employment environment next year?"
 events = graph.stream(
-    {"messages": messages},
+    {"messages": [("user", query)]},
     stream_mode="values",
 )
 for i, step in enumerate(events):

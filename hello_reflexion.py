@@ -1,32 +1,38 @@
-from typing_extensions import TypedDict
-from typing import Annotated
-from langgraph.graph.message import add_messages
-from langgraph.graph import END, StateGraph, START
-from langgraph.prebuilt import ToolNode
-from langchain_core.tools import StructuredTool
-import json
 import datetime
+import json
+from typing import Annotated
+
+from dotenv import load_dotenv
+from langchain_community.chat_models import ChatZhipuAI
+from langchain_community.tools import DuckDuckGoSearchResults
+from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
+from langchain_community.utilities.tavily_search import TavilySearchAPIWrapper
+from langchain_core.messages import ToolMessage
+from langchain_core.output_parsers.openai_tools import PydanticToolsParser
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.tools import StructuredTool
+from langchain_openai import ChatOpenAI
+from langgraph.graph import END, StateGraph, START
+from langgraph.graph.message import add_messages
+from langgraph.prebuilt import ToolNode
 from pydantic import BaseModel, Field
 from pydantic import ValidationError
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_core.output_parsers.openai_tools import PydanticToolsParser
-from langchain_core.messages import ToolMessage
-from dotenv import load_dotenv
-from langchain_community.tools.tavily_search import TavilySearchResults
-from langchain_community.utilities.tavily_search import TavilySearchAPIWrapper
-from langchain_openai import ChatOpenAI
-from langchain_community.tools import DuckDuckGoSearchResults
-from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
+from typing_extensions import TypedDict
+import os
 
 load_dotenv()
 
 MAX_CRITIQUES = 1
-MAX_ITERATIONS = 2
-model_name = "llama3.3"
-llm = ChatOpenAI(
-    model=model_name,
-    base_url="http://localhost:11434/v1",
-)
+MAX_ITERATIONS = 1
+
+llama_model = ChatOpenAI(model="llama3.3", base_url="http://localhost:11434/v1", )
+zhipu_model = ChatZhipuAI(model="GLM-4-Plus", temperature=0)
+# in bind_tools raise NotImplementedError
+# kimi_model = MoonshotChat(model="moonshot-v1-8k", temperature=0)
+kimi_model = ChatOpenAI(model="moonshot-v1-8k",api_key=os.environ["MOONSHOT_API_KEY"], base_url="https://api.moonshot.cn/v1", )
+
+llms = [kimi_model, zhipu_model, llama_model]
 
 # https://api.tavily.com
 tavily = TavilySearchResults(
@@ -34,9 +40,9 @@ tavily = TavilySearchResults(
 
 # https://duckduckgo.com/
 duck_duck_go = DuckDuckGoSearchResults(
-    api_wrapper=DuckDuckGoSearchAPIWrapper(), max_results=5)
+    api_wrapper=DuckDuckGoSearchAPIWrapper(), max_results=5, output_format="json")
 
-search_tools = [duck_duck_go, tavily]
+search_tools = [tavily, duck_duck_go]
 
 
 class Reflection(BaseModel):
@@ -70,7 +76,8 @@ class ResponderWithRetries:
                 {"tags": [f"attempt:{attempt}"]}
             )
             end_time = datetime.datetime.now()
-            print(f"{attempt} RESPONSE({end_time-start_time} ms):")
+            elapsed_time = (end_time - start_time).total_seconds() * 1000  # Convert to milliseconds
+            print(f"{attempt} RESPONSE({elapsed_time} ms):")
             print(response)
             try:
                 self.validator.invoke(response)
@@ -81,9 +88,9 @@ class ResponderWithRetries:
                 schema_json = json.dumps(self.validator.model_json_schema())
                 message = ToolMessage(
                     content=f"{
-                        repr(e)}\n\nPay close attention to the function schema.\n\n"
-                    + schema_json
-                    + " Respond by fixing all validation errors.",
+                    repr(e)}\n\nPay close attention to the function schema.\n\n"
+                            + schema_json
+                            + " Respond by fixing all validation errors.",
                     tool_call_id=response.tool_calls[0]["id"],
                 )
                 state["messages"] += [response, message]
@@ -117,7 +124,7 @@ Current time: {time}
 initial_answer_chain = actor_prompt_template.partial(
     first_instruction="Provide a detailed ~250 word answer.",
     function_name=AnswerQuestion.__name__,
-) | llm.bind_tools(tools=[AnswerQuestion])
+) | llms[0].bind_tools(tools=[AnswerQuestion])
 
 validator = PydanticToolsParser(tools=[AnswerQuestion])
 
@@ -154,7 +161,7 @@ class ReviseAnswer(AnswerQuestion):
 revision_chain = actor_prompt_template.partial(
     first_instruction=revise_instructions,
     function_name=ReviseAnswer.__name__,
-) | llm.bind_tools(tools=[ReviseAnswer])
+) | llms[1].bind_tools(tools=[ReviseAnswer])
 revision_validator = PydanticToolsParser(tools=[ReviseAnswer])
 
 revisor = ResponderWithRetries(
@@ -170,10 +177,11 @@ def run_queries2(search_queries: list[str], **kwargs):
     """Run the generated queries."""
     return search_tools[1].batch([{"query": query} for query in search_queries])
 
+
 tool_node = ToolNode(
     [
         StructuredTool.from_function(run_queries, name=AnswerQuestion.__name__),
-        StructuredTool.from_function(run_queries2, name=ReviseAnswer.__name__),
+        StructuredTool.from_function(run_queries, name=ReviseAnswer.__name__),
     ]
 )
 

@@ -19,8 +19,10 @@ Using ollama as LLM locally, and representing workflow details as:
 1. [information-gather-prompting.ipynb](information-gather-prompting.ipynb)
 
 ### RAG
+
 >
-> [翁荔](https://x.com/lilianweng) 前OpenAI安全团队VP 本科毕业于北大 博士就读于印第安纳大学伯明顿分校 <https://www.bilibili.com/video/BV19dSHYUEAo>
+> [翁荔](https://x.com/lilianweng) 前OpenAI安全团队VP 本科毕业于北大
+> 博士就读于印第安纳大学伯明顿分校 <https://www.bilibili.com/video/BV19dSHYUEAo>
 >
 > 她提出了Agent公式：Agent=大模型+记忆+主动规划+工具使用
 

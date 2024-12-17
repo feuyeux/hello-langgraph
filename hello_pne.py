@@ -5,14 +5,14 @@ import os
 from typing import Annotated, List, Tuple
 from typing import Union
 
-from PIL import Image as PilImage
+# from PIL import Image as PilImage
 from dotenv import load_dotenv
 from langchain import hub
 from langchain_community.chat_models import ChatZhipuAI
 from langchain_community.tools import DuckDuckGoSearchResults
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_openai import ChatOpenAI
+# from langchain_openai import ChatOpenAI
 from langgraph.graph import END
 from langgraph.graph import StateGraph, START
 from langgraph.prebuilt import create_react_agent
@@ -22,15 +22,15 @@ from typing_extensions import TypedDict
 load_dotenv()
 
 # Define the models
-llama_model = ChatOpenAI(
-    model="llama3.3", base_url="http://localhost:11434/v1")
 zhipu_model = ChatZhipuAI(model="GLM-4-Plus")
-kimi_model = ChatOpenAI(
-    model="moonshot-v1-8k",
-    api_key=os.environ["MOONSHOT_API_KEY"],
-    base_url="https://api.moonshot.cn/v1",
-)
-llms = [llama_model, zhipu_model]
+# llama_model = ChatOpenAI(
+#     model="llama3.3", base_url="http://localhost:11434/v1")
+# kimi_model = ChatOpenAI(
+#     model="moonshot-v1-8k",
+#     api_key=os.environ["MOONSHOT_API_KEY"],
+#     base_url="https://api.moonshot.cn/v1",
+# )
+llm = zhipu_model
 
 # Define the tools
 # https://api.tavily.com
@@ -47,24 +47,21 @@ search_tools = [tavily]
 # https://smith.langchain.com/hub/ih/ih-react-agent-executor
 # prompt = hub.pull("ih/ih-react-agent-executor")
 # prompt.pretty_print()
-
-def state_modifier(messages: list):
-    prompt = ChatPromptTemplate.from_messages([
-        ("system", "You are a helpful assistant."),
-        MessagesPlaceholder("messages")
-    ])
-    return prompt.invoke({"messages": messages})
-
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are a helpful assistant."),
+    MessagesPlaceholder("messages")
+])
 
 agent_executor = create_react_agent(
-    model=llms[0],
+    model=llm,
     tools=search_tools,
-    state_modifier=state_modifier
+    state_modifier=prompt
 )
 
 
 # execute_result = agent_executor.invoke(
-#     {"messages": [("user", "What is the league ranking of the club that the World Cup champion captain has played for in the past three years?")]})
+#     {"messages": [("user", "What is the league ranking of the club that the World Cup champion captain has played for in the past three years?")]}
+# )
 # print("execute_result", execute_result)
 
 
@@ -88,16 +85,16 @@ The result of the final step should be the final answer. Make sure that each ste
         ("placeholder", "{messages}"),
     ]
 )
-planner = planner_prompt | llms[0].with_structured_output(Plan)
+planner = planner_prompt | llm.with_structured_output(Plan)
 
-planner_result = planner.invoke({
-    "messages": [
-        ("user",
-         "What is the league ranking of the club that the World Cup champion captain has played for in the past three years?")
-    ],
-    "steps": ["Get World Cup Champion", "Get League Ranking"]
-})
-print("planner_result", planner_result)
+# planner_result = planner.invoke({
+#     "messages": [
+#         ("user",
+#          "What is the league ranking of the club that the World Cup champion captain has played for in the past three years?")
+#     ],
+#     "steps": ["Get World Cup Champion", "Get League Ranking"]
+# })
+# print("planner_result", planner_result)
 
 
 # Define the replan agent
@@ -134,7 +131,7 @@ You have currently done the follow steps:
 Update your plan accordingly. If no more steps are needed and you can return to the user, then respond with that. Otherwise, fill out the plan. Only add steps to the plan that still NEED to be done. Do not return previously done steps as part of the plan."""
 )
 
-replanner = replanner_prompt | llms[0].with_structured_output(Act)
+replanner = replanner_prompt | llm.with_structured_output(Act)
 
 
 # Define the workflow
@@ -150,15 +147,29 @@ class PlanExecute(TypedDict):
 async def execute_step(state: PlanExecute):
     plan = state["plan"]
     plan_str = "\n".join(f"{i + 1}. {step}" for i, step in enumerate(plan))
-    task = plan[0]
-    task_formatted = f"""For the following plan:
-{plan_str}\n\nYou are tasked with executing step {1}, {task}."""
-    agent_response = await agent_executor.ainvoke(
-        {"messages": [("user", task_formatted)]}
-    )
-    return {
-        "past_steps": [(task, agent_response["messages"][-1].content)],
-    }
+    if not plan:
+        return {
+            "past_steps": [("No task", "Error: Plan is empty")],
+        }
+    else:
+        task = plan[0]
+        task_formatted = f"""For the following plan:
+    {plan_str}\n\nYou are tasked with executing step {1}, {task}."""
+        try:
+            msg = ("user", task_formatted)
+            # print("msg:", msg)
+            agent_response = await agent_executor.ainvoke(
+                {"messages": [msg]}
+            )
+            execute_result = agent_response["messages"][-1].content
+            return {
+                "past_steps": [(task, execute_result)],
+            }
+        except Exception as e:
+            print(f"Error executing step: {e}")
+            return {
+                "past_steps": [(task, f"Error: {e}")],
+            }
 
 
 async def plan_step(state: PlanExecute):
@@ -168,6 +179,8 @@ async def plan_step(state: PlanExecute):
 
 async def replan_step(state: PlanExecute):
     output = await replanner.ainvoke(state)
+    if output is None:
+        return {"response": "Error: replanner returned None"}
     if isinstance(output.action, Response):
         return {"response": output.action.response}
     else:
@@ -207,6 +220,9 @@ workflow.add_conditional_edges(
     ["execute_node", END],
 )
 
+# Finally, we compile it!
+# This compiles it into a LangChain Runnable,
+# meaning you can use it as you would any other runnable
 app = workflow.compile()
 
 # image_bytes = app.get_graph(xray=True).draw_mermaid_png()
@@ -214,15 +230,16 @@ app = workflow.compile()
 # image = PilImage.open(image_stream)
 # image.show()
 
-config = {"recursion_limit": 10}
-inputs = {"input": "What is the league ranking of the club that the World Cup champion captain has played for in the past three years?"}
+# https: // langchain-ai.github.io/langgraph/troubleshooting/errors/GRAPH_RECURSION_LIMIT/
+config = {"recursion_limit": 100}
+inputs = {"input": "最近一次世界杯的冠军队队长过去一年所效力的俱乐部在联赛中的排名？"}
 
 
 async def main():
     async for event in app.astream(inputs, config=config):
         for k, v in event.items():
             if k != "__end__":
-                print(v)
+                print(k, "::::", v)
 
 
 asyncio.run(main())

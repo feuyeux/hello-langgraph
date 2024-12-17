@@ -1,0 +1,194 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram name="第 1 页" id="JGTNSw7YOtRR2n-2OMZs">
+    <mxGraphModel dx="7177" dy="3477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8S169PcEmQbmxJvlpCnG-44" value="RePlan Node" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=right;fontSize=20;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1520" y="-1280" width="1115" height="685.26" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-42" value="Execute Node" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=right;fontSize=20;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-2391" y="-1192.5" width="810" height="488.26" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-41" value="Plan Node" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=right;fontSize=20;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-3206" y="-1228.37" width="760" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-2" value="langgraph.prebuilt create_react_agent -&gt; CompiledGraph" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontFamily=Poppins;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-2366" y="-1104.24" width="770" height="305" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-6" value="agent" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1;fontSize=16;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-2176" y="-1051.74" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-7" value="tools" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1;fontSize=16;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-1816" y="-1051.74" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-3" value="Should end" style="rounded=0;whiteSpace=wrap;verticalAlign=middle;fontSize=16;fontFamily=Poppins;fontColor=#CC0066;strokeColor=#CC0066;" parent="1" vertex="1">
+          <mxGeometry x="-2096" y="-668.37" width="220" height="80.01" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-37" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Poppins;fontSize=16;" parent="1" source="ScsCbn858ug2dNW6hYMq-3" target="ScsCbn858ug2dNW6hYMq-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1508.0000000000005" y="-525.1" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-2" value="planner" style="rounded=0;whiteSpace=wrap;fontFamily=Poppins;fontSize=16;labelBackgroundColor=none;fontColor=default;fontStyle=0;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="-3186" y="-1141.37" width="722" height="379.99" as="geometry" />
+        </mxCell>
+        <mxCell id="DDGEUJCVJTAiT2eQpah1-13" value="&lt;div style=&quot;line-height: 21px; white-space-collapse: preserve;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontFamily=Poppins;labelBackgroundColor=none;fontColor=default;fontStyle=0;" parent="1" vertex="1">
+          <mxGeometry x="-2775.75" y="-1087.9399999999998" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DDGEUJCVJTAiT2eQpah1-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=30;entryPerimeter=0;fontSize=18;fontFamily=Roboto;labelBackgroundColor=none;fontColor=default;fontStyle=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="-877.25" y="-60.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DDGEUJCVJTAiT2eQpah1-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Roboto;fontSize=18;labelBackgroundColor=none;fontColor=default;fontStyle=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-784.75" y="-60.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-9" value="GLM-4-Plus&#xa;ZHIPUAI" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;fontFamily=Poppins;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-2154" y="-981.74" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-18" value="START" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="-3376" y="-978.37" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-19" value="END" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="-2366" y="-658.36" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-20" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999900;fontColor=#FFFFFF;strokeWidth=2;fontFamily=Poppins;fontSize=16;" parent="1" source="ScsCbn858ug2dNW6hYMq-18" target="8S169PcEmQbmxJvlpCnG-41" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-3526" y="-2163.1900000000005" as="sourcePoint" />
+            <mxPoint x="-3471" y="-2103.1900000000005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-51" value="{&quot;plan&quot;: plan.steps}" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#d0cee2;strokeColor=#56517e;align=center;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-3184" y="-738.37" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-55" value="HUMAN MESSAGE" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=center;spacingLeft=10;fontFamily=Poppins;fontStyle=0;verticalAlign=middle;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="-3184" y="-1218.37" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ScsCbn858ug2dNW6hYMq-59" value="prompt | llm.with_structured_output(Plan)" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontFamily=Poppins;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-3166" y="-981.38" width="370" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vCSyPXUICVTOdkfU3usH-1" value="&quot;&quot;&quot;For the given objective, come up with a simple step by step plan. \&#xa;This plan should involve individual tasks, that if executed correctly will yield the correct answer. Do not add any superfluous steps. \&#xa;The result of the final step should be the final answer. Make sure that each step has all the information needed - do not skip steps.&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-3166" y="-1100.1899999999998" width="680" height="111.19" as="geometry" />
+        </mxCell>
+        <mxCell id="vCSyPXUICVTOdkfU3usH-8" value="replanner" style="rounded=0;whiteSpace=wrap;fontFamily=Poppins;fontSize=16;labelBackgroundColor=none;fontColor=default;fontStyle=0;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="-1497.5" y="-1240" width="1070" height="552.26" as="geometry" />
+        </mxCell>
+        <mxCell id="vCSyPXUICVTOdkfU3usH-16" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Poppins;fontSize=16;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="8S169PcEmQbmxJvlpCnG-41" target="8S169PcEmQbmxJvlpCnG-42" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1371" y="-904.1" as="sourcePoint" />
+            <mxPoint x="-1006" y="-797.1" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vCSyPXUICVTOdkfU3usH-18" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.002;exitY=0.947;exitDx=0;exitDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Poppins;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;exitPerimeter=0;" parent="1" source="8S169PcEmQbmxJvlpCnG-44" target="ScsCbn858ug2dNW6hYMq-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1733" y="-422.1099999999999" as="sourcePoint" />
+            <mxPoint x="-1298" y="-365.10999999999996" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fKxt4CHwcqZsrzn-_JvP-3" value="&quot;&quot;&quot;For the given objective, come up with a simple step by step plan. \&lt;br&gt;This plan should involve individual tasks, that if executed correctly will yield the correct answer. Do not add any superfluous steps. \&lt;br&gt;The result of the final step &lt;b&gt;should be the final answer&lt;/b&gt;. Make sure that each step has all the information needed - do not skip steps.&lt;br&gt;Your objective was this:&lt;br&gt;{input}&lt;br&gt;Your original plan was this:&lt;br&gt;{plan}&lt;br&gt;You have currently done the follow steps:&lt;br&gt;{past_steps}&lt;br&gt;Update your plan accordingly. If no more steps are needed and you can return to the user, then respond with that. Otherwise, fill out the plan. Only add steps to the plan that still NEED to be done. Do not return previously done steps as part of the plan.&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1477.5" y="-1196.5600000000002" width="1030" height="234.82" as="geometry" />
+        </mxCell>
+        <mxCell id="fKxt4CHwcqZsrzn-_JvP-4" value="AI MESSAGE" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#d0cee2;strokeColor=#56517e;align=center;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" parent="1" vertex="1">
+          <mxGeometry x="-1676" y="-832.69" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fKxt4CHwcqZsrzn-_JvP-5" value="HUMAN MESSAGE" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=center;spacingLeft=10;fontFamily=Poppins;fontStyle=0;verticalAlign=middle;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="-1676" y="-900.44" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-1" value="TavilySearch" style="rounded=0;whiteSpace=wrap;fontSize=16;fillColor=#56517E;fontColor=#FFFFCC;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1796" y="-1001.74" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-3" value="You are a helpful assistant." style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;align=left;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="-2154" y="-1016.7399999999999" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Poppins;fontSize=16;" edge="1" parent="1" source="8S169PcEmQbmxJvlpCnG-4" target="8S169PcEmQbmxJvlpCnG-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-4" value="START" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-2355.75" y="-1011.74" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-5" value="END" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#003366;fontColor=#182E3E;fillColor=default;fontFamily=Poppins;strokeWidth=2;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-2096" y="-871.74" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fontFamily=Poppins;fontSize=16;" edge="1" parent="1" source="8S169PcEmQbmxJvlpCnG-6" target="8S169PcEmQbmxJvlpCnG-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Poppins;fontSize=16;" edge="1" parent="1" source="8S169PcEmQbmxJvlpCnG-6" target="8S169PcEmQbmxJvlpCnG-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fontFamily=Poppins;fontSize=16;" edge="1" parent="1" source="8S169PcEmQbmxJvlpCnG-7" target="8S169PcEmQbmxJvlpCnG-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-13" value=" &quot;past_steps&quot;: [(task, execute_result)]" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#d0cee2;strokeColor=#56517e;align=center;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="-2366" y="-784.24" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-17" value="Plan" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=16;fontFamily=Poppins;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-3166" y="-911.38" width="676" height="132" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-18" value="steps" style="rounded=1;whiteSpace=wrap;fontSize=16;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-3151" y="-829.38" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-21" value="&quot;&quot;&quot;Plan to follow in future&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=16;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-3151" y="-879.38" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-25" value="different steps to follow, should be in sorted order" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=16;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-3021" y="-829.38" width="421" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-27" value="Act" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=16;fontFamily=Poppins;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-1477.5" y="-880" width="650" height="173.24" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-28" value="action" style="rounded=1;whiteSpace=wrap;fontSize=16;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1462.5" y="-824" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-29" value="&quot;Action to perform. If you want to respond to user, use Response. &quot;&#xa;&quot;If you need to further use tools to get the answer, use Plan.&quot;" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=16;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1327.5" y="-786" width="490" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-31" value="Response" style="rounded=0;whiteSpace=wrap;verticalAlign=top;fontSize=16;fontFamily=Poppins;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-810" y="-881.74" width="260" height="132" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-32" value="response" style="rounded=1;whiteSpace=wrap;fontSize=16;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-795" y="-799.74" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-33" value="&quot;&quot;&quot;Response to user.&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=16;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-795" y="-849.74" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-34" value="&quot;&quot;&quot;Action to perform.&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;fillColor=#A8DADC;fontSize=16;align=left;spacingLeft=10;fontFamily=Poppins;" vertex="1" parent="1">
+          <mxGeometry x="-1462.5" y="-866" width="212.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-35" value="prompt | llm.with_structured_output(Act)" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontFamily=Poppins;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="-1477.5" y="-949.38" width="370" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-36" value="GLM-4-Plus&#xa;ZHIPUAI" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;fontFamily=Poppins;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="-1097.5" y="-949.38" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-37" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); line-height: 22px; white-space-collapse: preserve;&quot;&gt;&lt;span style=&quot;color: #9cdcfe;&quot;&gt;Union&lt;/span&gt;[&lt;span style=&quot;color: #9cdcfe;&quot;&gt;Response&lt;/span&gt;, &lt;span style=&quot;color: #9cdcfe;&quot;&gt;Plan&lt;/span&gt;]&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Poppins;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-1332.5" y="-826" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-38" value="GLM-4-Plus&#xa;ZHIPUAI" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;fontFamily=Poppins;flipV=1;verticalAlign=middle;align=center;fontSize=16;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="-2784" y="-981.38" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-40" value="&quot;&quot;&quot;For the following plan:&#xa;    {plan_str}\n\nYou are tasked with executing step {1}, {task}.&quot;&quot;&quot;" style="rounded=0;whiteSpace=wrap;strokeColor=none;fontColor=#46495D;fillColor=#B2C9AB;labelBackgroundColor=none;align=left;spacingLeft=10;fontFamily=Poppins;fontStyle=0;verticalAlign=middle;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-2366" y="-1177.5" width="510" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-45" value="{&quot;response&quot;: output.action.response} | {&quot;plan&quot;: output.action.steps}" style="rounded=0;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#d0cee2;strokeColor=#56517e;align=center;spacingLeft=10;fontFamily=Poppins;fontSize=16;verticalAlign=middle;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="-1497.5" y="-672.24" width="557.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-46" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Poppins;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=16;" edge="1" parent="1" source="ScsCbn858ug2dNW6hYMq-3" target="8S169PcEmQbmxJvlpCnG-42">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-820" y="-533.0799999999999" as="sourcePoint" />
+            <mxPoint x="-1620" y="-426.09000000000015" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8S169PcEmQbmxJvlpCnG-47" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1.001;exitY=0.521;exitDx=0;exitDy=0;strokeColor=#999900;strokeWidth=2;fontFamily=Poppins;fontSize=16;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="8S169PcEmQbmxJvlpCnG-42" target="8S169PcEmQbmxJvlpCnG-44">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1620" y="-548.1550000000007" as="sourcePoint" />
+            <mxPoint x="-1438" y="-873.0799999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

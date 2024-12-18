@@ -1,7 +1,6 @@
 langchain-core==0.3.25
 langchain==0.3.12
 langchain-community==0.3.12
-duckduckgo-search==6.4.1
 langchain-openai==0.2.12
 langchain-ollama==0.2.1
 langchainhub==0.1.21
@@ -24,7 +23,12 @@ python-dotenv==1.0.1
 #
 tavily-python==0.5.0
 #
-openai
+openai==1.58.1
 httpx
 httpx-sse
 PyJWT
+#
+qianfan==0.4.12.2
+redis
+#
+duckduckgo-search==6.4.1

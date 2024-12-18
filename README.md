@@ -24,7 +24,7 @@ Using ollama as LLM locally, and representing workflow details as:
 > [翁荔](https://x.com/lilianweng) 前OpenAI安全团队VP 本科毕业于北大
 > 博士就读于印第安纳大学伯明顿分校 <https://www.bilibili.com/video/BV19dSHYUEAo>
 >
-> 她提出了Agent公式：Agent=大模型+记忆+主动规划+工具使用
+> 她提出了Agent公式：**Agent=大模型+记忆+主动规划+工具使用**
 
 1. [agentic_rag.ipynb](agentic_rag.ipynb)
 1. [adaptive_rag.ipynb](adaptive_rag.ipynb)
@@ -42,8 +42,9 @@ Using ollama as LLM locally, and representing workflow details as:
 
 #### Planning
 
-1. [plan-and-execute.ipynb](plan-and-execute.ipynb)
-1. [rewoo.ipynb](rewoo.ipynb)
+1. [react.ipynb](react.ipynb)
+2. [plan-and-execute.ipynb](plan-and-execute.ipynb)
+3. [rewoo.ipynb](rewoo.ipynb)
 
 #### Multi-Agent
 

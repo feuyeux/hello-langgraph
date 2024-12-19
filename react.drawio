@@ -1,0 +1,53 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram name="第 1 页" id="74GF9dd4Hj6v-dmnbIOR">
+    <mxGraphModel dx="1054" dy="454" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="rNT7We0P9_acyeKCM1_O-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;endArrow=classicThin;endFill=1;fontSize=14;fontFamily=Verdana;" edge="1" parent="1" source="rNT7We0P9_acyeKCM1_O-14" target="rNT7We0P9_acyeKCM1_O-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="271" y="90" />
+              <mxPoint x="380" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rNT7We0P9_acyeKCM1_O-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;curved=1;endArrow=classicThin;endFill=1;fontSize=14;fontFamily=Verdana;" edge="1" parent="1" source="rNT7We0P9_acyeKCM1_O-14" target="rNT7We0P9_acyeKCM1_O-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rNT7We0P9_acyeKCM1_O-14" value="LM" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#CC0066;fontSize=14;fontFamily=Verdana;" diagramCategory="general" diagramName="Rectangle" vertex="1" parent="1">
+          <mxGeometry x="204" y="115" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rNT7We0P9_acyeKCM1_O-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;curved=1;endArrow=classicThin;endFill=1;fontSize=14;fontFamily=Verdana;" edge="1" parent="1" source="rNT7We0P9_acyeKCM1_O-16" target="rNT7We0P9_acyeKCM1_O-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rNT7We0P9_acyeKCM1_O-16" value="Env" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#004C99;fontSize=14;fontFamily=Verdana;" diagramCategory="general" diagramName="Rectangle" vertex="1" parent="1">
+          <mxGeometry x="336.5" y="115" width="87.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rNT7We0P9_acyeKCM1_O-17" value="&lt;font color=&quot;#cc0066&quot; style=&quot;font-size: 18px;&quot;&gt;Re&lt;/font&gt;&lt;font color=&quot;#004c99&quot; style=&quot;font-size: 18px;&quot;&gt;Act&lt;/font&gt;(&lt;font color=&quot;#cc0066&quot; style=&quot;font-size: 18px;&quot;&gt;Reason&lt;/font&gt;+&lt;font color=&quot;#004c99&quot; style=&quot;font-size: 18px;&quot;&gt;Act&lt;/font&gt;)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=18;fontFamily=Verdana;" vertex="1" parent="1">
+          <mxGeometry x="64" y="50" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="rNT7We0P9_acyeKCM1_O-18" value="Actions" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#004C99;fontSize=14;fontFamily=Verdana;" vertex="1" parent="1">
+          <mxGeometry x="310" y="60" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rNT7We0P9_acyeKCM1_O-19" value="Observations" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#004C99;fontSize=14;fontFamily=Verdana;" vertex="1" parent="1">
+          <mxGeometry x="284" y="195" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rNT7We0P9_acyeKCM1_O-20" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;endArrow=classicThin;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontSize=14;fontFamily=Verdana;" edge="1" parent="1" source="rNT7We0P9_acyeKCM1_O-22" target="rNT7We0P9_acyeKCM1_O-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="114" y="90" />
+              <mxPoint x="227" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rNT7We0P9_acyeKCM1_O-21" value="&lt;span style=&quot;font-size: 14px; font-variant-ligatures: normal; text-align: justify;&quot;&gt;chain-of-thought prompting&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontColor=#CC0066;fontSize=14;fontFamily=Verdana;" vertex="1" parent="1">
+          <mxGeometry x="64" y="197" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rNT7We0P9_acyeKCM1_O-22" value="Reasoing&lt;br style=&quot;font-size: 14px;&quot;&gt;Traces" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=none;fontColor=#CC0066;fontSize=14;fontFamily=Verdana;" diagramCategory="general" diagramName="RoundedRectangle" vertex="1" parent="1">
+          <mxGeometry x="89" y="130" width="50" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

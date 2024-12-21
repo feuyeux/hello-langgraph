@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: hello-langgraph
+  main:
+    banner-mode: off
+server:
+  port: 7070

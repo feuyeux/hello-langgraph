@@ -5,7 +5,7 @@ import java.time.Duration;
 
 public class EmbeddingModelBuilder {
 
-  public static ZhipuAiEmbeddingModel buildEmbeddingModel(String apiKey) {
+  static ZhipuAiEmbeddingModel buildEmbeddingModel(String apiKey) {
     return ZhipuAiEmbeddingModel.builder()
         .apiKey(apiKey)
         .connectTimeout(Duration.ofMinutes(1))

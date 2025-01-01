@@ -24,7 +24,7 @@ import org.springframework.stereotype.Repository;
 @Slf4j
 @Repository
 public class HelloEmbeddingStore {
-  private ZhipuAiEmbeddingModel embeddingModel = buildEmbeddingModel(getZhipuAiKey());
+  private ZhipuAiEmbeddingModel embeddingModel;
   private EmbeddingStore<TextSegment> embeddingStore;
 
   public EmbeddingStore<TextSegment> buildEmbeddingStore() {
@@ -74,6 +74,7 @@ public class HelloEmbeddingStore {
             .logRequests(true)
             .logResponses(true)
             .build();
+    embeddingModel = buildEmbeddingModel(getZhipuAiKey());
     buildEmbeddingStore();
   }
 }

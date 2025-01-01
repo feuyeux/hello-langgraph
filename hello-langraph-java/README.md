@@ -17,13 +17,28 @@
 
 ## Test
 
-### Run LangGraph Demo
+### Run LangGraph Adaptive RAG Demo
+
 ```sh
 sh test.sh testGraphRun
 ```
 
-### Generate Graph Diagram
+
+### Generate Adaptive RAG Graph Diagram
 
 ```sh
 sh test.sh testGraphing
+```
+
+[`src/main/java/org/feuyeux/ai/hello/graph/AdaptiveRagGraph.java`](src/main/java/org/feuyeux/ai/hello/graph/AdaptiveRagGraph.java)
+
+| mermaid                                                                                  | plantUml                                                                                    |
+|------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| <img src="AdaptiveRAG-mermaid.svg" alt="Adaptive RAG mermaid svg" style="width:600px" /> | <img src="Adaptive RAG plantUml svg" alt="Adaptive_RAG-plantUml.svg" style="width:600px" /> |
+
+
+### Debug Environment
+
+```sh
+sh test.sh testLog
 ```

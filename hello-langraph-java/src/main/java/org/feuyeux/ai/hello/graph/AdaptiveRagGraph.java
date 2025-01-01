@@ -25,35 +25,31 @@ import org.feuyeux.ai.hello.repository.HelloEmbeddingStore;
 @Slf4j(topic = "AdaptiveRag")
 public class AdaptiveRagGraph {
 
-  private final String apiKey;
+  private final String aiApiKey;
   private final String tavilyApiKey;
   private HelloEmbeddingStore helloEmbeddingStore;
 
   public AdaptiveRagGraph(
-      String apiKey, String tavilyApiKey, HelloEmbeddingStore helloEmbeddingStore) {
-    this.apiKey = apiKey;
+      String aiApiKey, String tavilyApiKey, HelloEmbeddingStore helloEmbeddingStore) {
+    this.aiApiKey = aiApiKey;
     this.tavilyApiKey = tavilyApiKey;
     this.helloEmbeddingStore = helloEmbeddingStore;
   }
 
   public StateGraph<State> buildGraph() throws Exception {
     return new StateGraph<>(State::new)
-        // Define the nodes
-        .addNode("web_search", node_async(this::webSearch)) // web search
-        .addNode("retrieve", node_async(this::retrieve)) // retrieve
-        .addNode("grade_documents", node_async(this::gradeDocuments)) // grade documents
-        .addNode("generate", node_async(this::generate)) // generate
-        .addNode("transform_query", node_async(this::transformQuery)) // transform_query
-        // Build graph
         .addConditionalEdges(
             START,
             edge_async(this::routeQuestion),
             mapOf(
                 "web_search", "web_search",
                 "vectorstore", "retrieve"))
+        .addNode("web_search", node_async(this::webSearch))
+        .addNode("retrieve", node_async(this::retrieve))
         .addEdge("web_search", "generate")
+        .addNode("generate", node_async(this::generate))
         .addEdge("retrieve", "grade_documents")
-        .addEdge("transform_query", "retrieve")
+        .addNode("grade_documents", node_async(this::gradeDocuments))
         .addConditionalEdges(
             "generate",
             edge_async(this::gradeGeneration_v_documentsAndQuestion),
@@ -61,12 +57,14 @@ public class AdaptiveRagGraph {
                 "not supported", "generate",
                 "useful", END,
                 "not useful", "transform_query"))
+        .addNode("transform_query", node_async(this::transformQuery))
         .addConditionalEdges(
             "grade_documents",
             edge_async(this::decideToGenerate),
             mapOf(
                 "transform_query", "transform_query",
-                "generate", "generate"));
+                "generate", "generate"))
+        .addEdge("transform_query", "retrieve");
   }
 
   /**
@@ -75,11 +73,11 @@ public class AdaptiveRagGraph {
    * @param state The current graph state
    * @return Next node to call
    */
-  private String routeQuestion(State state) {
+  private String routeQuestion(AdaptiveRagGraph.State state) {
     log.debug("---ROUTE QUESTION---");
     String question = state.question();
-    QuestionRouter.Type source = QuestionRouter.of(apiKey).apply(question);
-    if (source == QuestionRouter.Type.web_search) {
+    QuestionRouterEdgeFn.Type source = QuestionRouterEdgeFn.of(aiApiKey).apply(question);
+    if (source == QuestionRouterEdgeFn.Type.web_search) {
       log.debug("---ROUTE QUESTION TO WEB SEARCH---");
     } else {
       log.debug("---ROUTE QUESTION TO RAG---");
@@ -96,7 +94,7 @@ public class AdaptiveRagGraph {
   private Map<String, Object> webSearch(State state) {
     log.debug("---WEB SEARCH---");
     String question = state.question();
-    List<Content> result = WebSearchToolFn.of(tavilyApiKey).apply(question);
+    List<Content> result = WebSearchNodeFn.of(tavilyApiKey).apply(question);
     String webResult =
         result.stream()
             .map(content -> content.textSegment().text())
@@ -129,13 +127,14 @@ public class AdaptiveRagGraph {
     log.debug("---CHECK DOCUMENT RELEVANCE TO QUESTION---");
     String question = state.question();
     List<String> documents = state.documents();
-    final RetrievalGrader grader = RetrievalGrader.of(apiKey);
+    final RetrievalGraderNodeFn grader = RetrievalGraderNodeFn.of(aiApiKey);
     List<String> filteredDocs =
         documents.stream()
             .filter(
                 d -> {
-                  RetrievalGrader.Arguments arguments = RetrievalGrader.Arguments.of(question, d);
-                  RetrievalGrader.Score score = grader.apply(arguments);
+                  RetrievalGraderNodeFn.Arguments arguments =
+                      RetrievalGraderNodeFn.Arguments.of(question, d);
+                  RetrievalGraderNodeFn.Score score = grader.apply(arguments);
                   boolean relevant = score.binaryScore.equals("yes");
                   if (relevant) {
                     log.debug("---GRADE: DOCUMENT RELEVANT---");
@@ -145,7 +144,6 @@ public class AdaptiveRagGraph {
                   return relevant;
                 })
             .collect(Collectors.toList());
-
     return mapOf("documents", filteredDocs);
   }
 
@@ -159,7 +157,7 @@ public class AdaptiveRagGraph {
     log.debug("---GENERATE---");
     String question = state.question();
     List<String> documents = state.documents();
-    String generation = Generation.of(apiKey).apply(question, documents); // service
+    String generation = GenerationNodeFn.of(aiApiKey).apply(question, documents); // service
     return mapOf("generation", generation);
   }
 
@@ -172,7 +170,7 @@ public class AdaptiveRagGraph {
   private Map<String, Object> transformQuery(State state) {
     log.debug("---TRANSFORM QUERY---");
     String question = state.question();
-    String betterQuestion = QuestionRewriter.of(apiKey).apply(question);
+    String betterQuestion = QuestionRewriterNodeFn.of(aiApiKey).apply(question);
     return mapOf("question", betterQuestion);
   }
 
@@ -207,15 +205,16 @@ public class AdaptiveRagGraph {
     String generation =
         state.generation().orElseThrow(() -> new IllegalStateException("generation is not set!"));
 
-    HallucinationGrader.Score score =
-        HallucinationGrader.of(apiKey)
-            .apply(HallucinationGrader.Arguments.of(documents, generation));
+    HallucinationGraderEdgeFn.Score score =
+        HallucinationGraderEdgeFn.of(aiApiKey)
+            .apply(HallucinationGraderEdgeFn.Arguments.of(documents, generation));
 
     if (Objects.equals(score.binaryScore, "yes")) {
       log.debug("---DECISION: GENERATION IS GROUNDED IN DOCUMENTS---");
       log.debug("---GRADE GENERATION vs QUESTION---");
-      AnswerGrader.Score score2 =
-          AnswerGrader.of(apiKey).apply(AnswerGrader.Arguments.of(question, generation));
+      AnswerGraderEdgeNodeFn.Score score2 =
+          AnswerGraderEdgeNodeFn.of(aiApiKey)
+              .apply(AnswerGraderEdgeNodeFn.Arguments.of(question, generation));
       if (Objects.equals(score2.binaryScore, "yes")) {
         log.debug("---DECISION: GENERATION ADDRESSES QUESTION---");
         return "useful";

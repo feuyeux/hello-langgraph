@@ -18,11 +18,13 @@ public class LanggraphService {
 
   private CompiledGraph<AdaptiveRagGraph.State> graph;
 
+  // https://open.bigmodel.cn/usercenter/proj-mgmt/apikeys
   public static String getZhipuAiKey() {
     return DotEnvConfig.valueOf("ZHIPUAI_API_KEY")
         .orElseThrow(() -> new IllegalArgumentException("no ZHIPUAI APIKEY provided!"));
   }
 
+  // https://app.tavily.com/
   public static String getTavilyApiKey() {
     return DotEnvConfig.valueOf("TAVILY_API_KEY")
         .orElseThrow(() -> new IllegalArgumentException("no TAVILY APIKEY provided!"));

@@ -11,7 +11,7 @@ import java.util.function.BiFunction;
 import lombok.Value;
 
 @Value(staticConstructor = "of")
-public class Generation implements BiFunction<String, List<String>, String> {
+public class GenerationNodeFn implements BiFunction<String, List<String>, String> {
 
   public interface Service {
 

@@ -38,7 +38,16 @@ class HelloLanggraphTests {
 
   @BeforeAll
   public static void beforeAll() throws Exception {
+    useProxy();
     DotEnvConfig.load();
+  }
+
+  private static void useProxy() {
+    String port = "50864";
+    System.setProperty("http.proxyHost", "127.0.0.1");
+    System.setProperty("http.proxyPort", port);
+    System.setProperty("https.proxyHost", "127.0.0.1");
+    System.setProperty("https.proxyPort", port);
   }
 
   @Test
@@ -48,29 +57,28 @@ class HelloLanggraphTests {
 
   @Test
   public void testGraphRun() {
-    String result = null;
     try {
-      result = langgraphService.generate(question);
+      String result = langgraphService.generate(question);
+      log.info("[Question]:\n{} \n[Graph result]:{}", question, result);
     } catch (Exception e) {
       log.error("", e);
     }
-    log.info("[Question]:\n{} \n[Graph result]:{}", question, result);
   }
 
   // ----
 
   @Test
   public void testQuestionRouter() {
-    QuestionRouter qr = QuestionRouter.of(getZhipuAiKey());
-    QuestionRouter.Type result = qr.apply("What are the stock options?");
-    assertEquals(QuestionRouter.Type.web_search, result);
+    QuestionRouterEdgeFn qr = QuestionRouterEdgeFn.of(getZhipuAiKey());
+    QuestionRouterEdgeFn.Type result = qr.apply("What are the stock options?");
+    assertEquals(QuestionRouterEdgeFn.Type.web_search, result);
     result = qr.apply(question);
-    assertEquals(QuestionRouter.Type.vectorstore, result);
+    assertEquals(QuestionRouterEdgeFn.Type.vectorstore, result);
   }
 
   @Test
   public void testWebSearch() {
-    WebSearchToolFn webSearchTool = WebSearchToolFn.of(getTavilyApiKey());
+    WebSearchNodeFn webSearchTool = WebSearchNodeFn.of(getTavilyApiKey());
     List<Content> webSearchResults =
         webSearchTool.apply("Who is the first president of the China?");
     String result =
@@ -83,15 +91,16 @@ class HelloLanggraphTests {
 
   @Test
   public void testRetrievalGrader() {
-    RetrievalGrader grader = RetrievalGrader.of(getZhipuAiKey());
+    RetrievalGraderNodeFn grader = RetrievalGraderNodeFn.of(getZhipuAiKey());
     // retrieve
     EmbeddingSearchResult<TextSegment> relevant = helloEmbeddingStore.search(question);
     List<EmbeddingMatch<TextSegment>> matches = relevant.matches();
     assertEquals(1, matches.size());
     String document = matches.getFirst().embedded().text();
     // grade
-    RetrievalGrader.Arguments arguments = RetrievalGrader.Arguments.of(question, document);
-    RetrievalGrader.Score answer = grader.apply(arguments);
+    RetrievalGraderNodeFn.Arguments arguments =
+        RetrievalGraderNodeFn.Arguments.of(question, document);
+    RetrievalGraderNodeFn.Score answer = grader.apply(arguments);
     log.info(
         "\n[Question]:\n{}\n[Document]:\n{}\n[RetrievalGrader result]:\n{}",
         question,
@@ -104,15 +113,15 @@ class HelloLanggraphTests {
     EmbeddingSearchResult<TextSegment> relevantDocs = helloEmbeddingStore.search(question);
     List<String> docs =
         relevantDocs.matches().stream().map(m -> m.embedded().text()).collect(Collectors.toList());
-    Generation qr = Generation.of(getZhipuAiKey());
+    GenerationNodeFn qr = GenerationNodeFn.of(getZhipuAiKey());
     String result = qr.apply(question, docs);
     log.info("\n[Question]:\n{}\n[Generation result]:\n{}", question, result);
   }
 
   @Test
   public void testQuestionRewriter() {
-    QuestionRewriter questionRewriter = QuestionRewriter.of(getZhipuAiKey());
-    String result = questionRewriter.apply(question);
+    QuestionRewriterNodeFn questionRewriterNodeFn = QuestionRewriterNodeFn.of(getZhipuAiKey());
+    String result = questionRewriterNodeFn.apply(question);
     log.info("\n[Question]:\n{}\n[QuestionRewriter result]:\n{}", question, result);
   }
 

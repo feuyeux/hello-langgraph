@@ -6,6 +6,7 @@ cd "$(
 
 source ./env
 echo "TAVILY_API_KEY=$TAVILY_API_KEY"
+echo "ZHIPUAI_API_KEY=$ZHIPUAI_API_KEY"
 
 if [ "$(docker ps -q -f name=chromadb)" ]; then
   echo "ChromaDB container is already running."

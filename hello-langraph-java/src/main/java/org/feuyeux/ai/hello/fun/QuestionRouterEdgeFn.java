@@ -8,10 +8,25 @@ import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.SystemMessage;
 import java.util.function.Function;
 import lombok.Value;
+import lombok.extern.slf4j.Slf4j;
+import org.feuyeux.ai.hello.graph.AdaptiveRagGraph;
 
+@Slf4j
 /** Router for user queries to the most relevant datasource. */
 @Value(staticConstructor = "of")
-public class QuestionRouter implements Function<String, QuestionRouter.Type> {
+public class QuestionRouterEdgeFn implements Function<String, QuestionRouterEdgeFn.Type> {
+
+  private String routeQuestion(AdaptiveRagGraph.State state) {
+    log.debug("---ROUTE QUESTION---");
+    String question = state.question();
+    QuestionRouterEdgeFn.Type source = QuestionRouterEdgeFn.of(apiKey).apply(question);
+    if (source == QuestionRouterEdgeFn.Type.web_search) {
+      log.debug("---ROUTE QUESTION TO WEB SEARCH---");
+    } else {
+      log.debug("---ROUTE QUESTION TO RAG---");
+    }
+    return source.name();
+  }
 
   public enum Type {
     vectorstore,

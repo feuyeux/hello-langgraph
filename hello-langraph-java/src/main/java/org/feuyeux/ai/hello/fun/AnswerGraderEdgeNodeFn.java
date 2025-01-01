@@ -13,29 +13,29 @@ import java.util.function.Function;
 import lombok.Value;
 
 @Value(staticConstructor = "of")
-public class RetrievalGrader implements Function<RetrievalGrader.Arguments, RetrievalGrader.Score> {
-  String apiKey;
-
+public class AnswerGraderEdgeNodeFn
+    implements Function<AnswerGraderEdgeNodeFn.Arguments, AnswerGraderEdgeNodeFn.Score> {
+  /** Binary score to assess answer addresses question. */
   public static class Score {
-    @Description("Documents are relevant to the question, 'yes' or 'no'")
+    @Description("Answer addresses the question, 'yes' or 'no'")
     public String binaryScore;
   }
 
-  @StructuredPrompt("Retrieved document: \n\n {{document}} \n\n User question: {{question}}")
+  @StructuredPrompt("User question: \n\n {{question}} \n\n LLM generation: {{generation}}")
   @Value(staticConstructor = "of")
   public static class Arguments {
     String question;
-    String document;
+    String generation;
   }
 
   interface Service {
     @SystemMessage(
-        "You are a grader assessing relevance of a retrieved document to a user question. \n"
-            + "    If the document contains keyword(s) or semantic meaning related to the user question, grade it as relevant. \n"
-            + "    It does not need to be a stringent test. The goal is to filter out erroneous retrievals. \n"
-            + "    Give a binary score 'yes' or 'no' score to indicate whether the document is relevant to the question.")
-    Score invoke(String question);
+        "You are a grader assessing whether an answer addresses and/or resolves a question. \n\n"
+            + "Give a binary score 'yes' or 'no'. Yes, means that the answer resolves the question otherwise return 'no'")
+    Score invoke(String userMessage);
   }
+
+  String apiKey;
 
   @Override
   public Score apply(Arguments args) {

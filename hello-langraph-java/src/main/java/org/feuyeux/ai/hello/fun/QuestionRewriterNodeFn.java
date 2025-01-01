@@ -12,7 +12,7 @@ import java.util.function.Function;
 import lombok.Value;
 
 @Value(staticConstructor = "of")
-public class QuestionRewriter implements Function<String, String> {
+public class QuestionRewriterNodeFn implements Function<String, String> {
 
   String apiKey;
 

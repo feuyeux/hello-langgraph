@@ -9,41 +9,40 @@ import dev.langchain4j.model.input.structured.StructuredPromptProcessor;
 import dev.langchain4j.model.output.structured.Description;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.SystemMessage;
-import java.util.List;
 import java.util.function.Function;
 import lombok.Value;
 
 @Value(staticConstructor = "of")
-public class HallucinationGrader
-    implements Function<HallucinationGrader.Arguments, HallucinationGrader.Score> {
+public class RetrievalGraderNodeFn
+    implements Function<RetrievalGraderNodeFn.Arguments, RetrievalGraderNodeFn.Score> {
+  String apiKey;
 
-  /** Binary score for hallucination present in generation answer. */
   public static class Score {
-    @Description("Answer is grounded in the facts, 'yes' or 'no'")
+    @Description("Documents are relevant to the question, 'yes' or 'no'")
     public String binaryScore;
   }
 
-  @StructuredPrompt("Set of facts: \\n\\n {{documents}} \\n\\n LLM generation: {{generation}}")
+  @StructuredPrompt("Retrieved document: \n\n {{document}} \n\n User question: {{question}}")
   @Value(staticConstructor = "of")
   public static class Arguments {
-    List<String> documents;
-    String generation;
+    String question;
+    String document;
   }
 
   interface Service {
     @SystemMessage(
-        "You are a grader assessing whether an LLM generation is grounded in / supported by a set of retrieved facts. \n"
-            + "Give a binary score 'yes' or 'no'. 'Yes' means that the answer is grounded in / supported by the set of facts.")
-    Score invoke(String userMessage);
+        "You are a grader assessing relevance of a retrieved document to a user question. \n"
+            + "    If the document contains keyword(s) or semantic meaning related to the user question, grade it as relevant. \n"
+            + "    It does not need to be a stringent test. The goal is to filter out erroneous retrievals. \n"
+            + "    Give a binary score 'yes' or 'no' score to indicate whether the document is relevant to the question.")
+    Score invoke(String question);
   }
-
-  String apiKey;
 
   @Override
   public Score apply(Arguments args) {
     ChatLanguageModel chatLanguageModel = buildChatLanguageModel(apiKey);
-    Service grader = AiServices.create(Service.class, chatLanguageModel);
+    Service service = AiServices.create(Service.class, chatLanguageModel);
     Prompt prompt = StructuredPromptProcessor.toPrompt(args);
-    return grader.invoke(prompt.text());
+    return service.invoke(prompt.text());
   }
 }

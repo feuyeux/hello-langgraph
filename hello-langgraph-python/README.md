@@ -45,3 +45,9 @@ Using ollama as LLM locally, and representing workflow details as:
 1. **Multi-Agent**
    8. [multi-agent-collaboration.ipynb](multi-agent-collaboration.ipynb)
    9. [agent-supervisor.ipynb](agent-supervisor.ipynb)
+
+## 2 Lab
+
+```sh
+sh install.sh
+```

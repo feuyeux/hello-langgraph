@@ -28,7 +28,7 @@ httpx
 httpx-sse
 PyJWT
 #
-qianfan==0.4.12.2
+qianfan==0.4.12.3
 redis
 #
 duckduckgo-search==7.3.1

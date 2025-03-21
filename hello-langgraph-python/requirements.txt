@@ -18,7 +18,7 @@ chromadb==0.6.3
 tiktoken==0.9.0
 lxml==5.3.1
 #
-IPython==9.0.1
+IPython==9.0.2
 python-dotenv==1.0.1
 #
 tavily-python==0.5.1

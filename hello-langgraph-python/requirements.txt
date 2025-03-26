@@ -31,4 +31,4 @@ PyJWT
 qianfan==0.4.12.3
 redis
 #
-duckduckgo-search==7.5.3
+duckduckgo-search==7.5.4

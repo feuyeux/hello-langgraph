@@ -13,7 +13,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 @Slf4j
-public class StructedOutputTests {
+public class StructuredOutputTests {
   StructuredOutputFn structuredOutputFn =new StructuredOutputFn(getZhipuAiKey());
 
   @BeforeAll

@@ -11,14 +11,21 @@
     <properties>
         <java.version>21</java.version>
         <spring-boot.version>3.4.4</spring-boot.version>
-        <langgraph4j.version>1.1.5</langgraph4j.version>
+        <langgraph4j.version>1.5.4</langgraph4j.version>
         <langchain4j.version>0.36.2</langchain4j.version>
         <lombok.version>1.18.36</lombok.version>
     </properties>
 
     <dependencies>
-        <!--==
-        longchain4j ==-->
+        <!-- GRAPH -->
+        <!-- https://mvnrepository.com/artifact/org.bsc.langgraph4j/langgraph4j-core -->
+        <dependency>
+            <groupId>org.bsc.langgraph4j</groupId>
+            <artifactId>langgraph4j-core</artifactId>
+            <version>${langgraph4j.version}</version>
+        </dependency>
+
+        <!-- CHAIN -->
         <!-- https://mvnrepository.com/artifact/dev.langchain4j/langchain4j -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
@@ -42,6 +49,7 @@
             <version>${langchain4j.version}</version>
         </dependency>
 
+        <!-- CHROMADB -->
         <!-- https://mvnrepository.com/artifact/org.testcontainers/chromadb -->
         <dependency>
             <groupId>org.testcontainers</groupId>
@@ -49,8 +57,7 @@
             <version>1.20.6</version>
         </dependency>
 
-        <!--==
-        springboot ==-->
+        <!-- SPRINGBOOT -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -64,6 +71,7 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- TEST -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

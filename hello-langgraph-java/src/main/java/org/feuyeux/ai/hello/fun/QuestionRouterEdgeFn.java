@@ -6,6 +6,7 @@ import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.model.output.structured.Description;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.SystemMessage;
+import dev.langchain4j.service.UserMessage;
 import java.util.function.Function;
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
@@ -41,9 +42,20 @@ public class QuestionRouterEdgeFn implements Function<String, QuestionRouterEdge
 
   interface Service {
     @SystemMessage(
-        "You are an expert at routing a user question to a vectorstore or web search.\n"
-            + "The vectorstore contains documents related to agents, prompt engineering, and adversarial attacks.\n"
-            + "Use the vectorstore for questions on these topics. Otherwise, use web-search.")
+        """
+        You are an expert at routing a user question to a vectorstore or web search.
+        The vectorstore contains documents related to agents, prompt engineering, and adversarial attacks.
+        Use the vectorstore for questions on these topics. Otherwise, use web-search.
+
+        Your task is to analyze the question and return a JSON object with the following structure:
+        {
+          "datasource": "vectorstore|web_search"
+        }
+
+        IMPORTANT: Return ONLY a valid JSON object, without any additional text or explanations.
+        """)
+    @UserMessage(
+        "Please analyze this question and determine the appropriate datasource: {question}")
     Result invoke(String question);
   }
 
@@ -53,7 +65,13 @@ public class QuestionRouterEdgeFn implements Function<String, QuestionRouterEdge
   public Type apply(String question) {
     ChatLanguageModel chatLanguageModel = buildChatLanguageModel(apiKey);
     Service extractor = AiServices.create(Service.class, chatLanguageModel);
-    Result ds = extractor.invoke(question);
-    return ds.datasource;
+    try {
+      Result ds = extractor.invoke(question);
+      return ds.datasource;
+    } catch (Exception e) {
+      log.error("Error routing question: {}", e.getMessage());
+      // Default to vectorstore when JSON parsing fails
+      return Type.vectorstore;
+    }
   }
 }

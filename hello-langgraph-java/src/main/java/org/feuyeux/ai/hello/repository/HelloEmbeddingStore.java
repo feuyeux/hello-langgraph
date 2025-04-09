@@ -16,6 +16,7 @@ import dev.langchain4j.store.embedding.EmbeddingSearchRequest;
 import dev.langchain4j.store.embedding.EmbeddingSearchResult;
 import dev.langchain4j.store.embedding.EmbeddingStore;
 import dev.langchain4j.store.embedding.chroma.ChromaEmbeddingStore;
+import dev.langchain4j.store.embedding.inmemory.InMemoryEmbeddingStore;
 import jakarta.annotation.PostConstruct;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -38,16 +39,20 @@ public class HelloEmbeddingStore {
               "https://lilianweng.github.io/posts/2023-10-25-adv-attack-llm/")
           .forEach(
               url -> {
-                Document document = UrlDocumentLoader.load(url, new TextDocumentParser());
-                int maxSegmentSize = 1024;
-                DocumentSplitter splitter = new DocumentByParagraphSplitter(maxSegmentSize, 8);
-                List<TextSegment> segments = splitter.split(document);
-                log.info("url:{} segments:{}", url, segments.size());
-                segments.forEach(
-                    segment -> {
-                      Embedding embedding = embeddingModel.embed(segment).content();
-                      embeddingStore.add(embedding, segment);
-                    });
+                try {
+                  Document document = UrlDocumentLoader.load(url, new TextDocumentParser());
+                  int maxSegmentSize = 1024;
+                  DocumentSplitter splitter = new DocumentByParagraphSplitter(maxSegmentSize, 8);
+                  List<TextSegment> segments = splitter.split(document);
+                  log.info("url:{} segments:{}", url, segments.size());
+                  segments.forEach(
+                      segment -> {
+                        Embedding embedding = embeddingModel.embed(segment).content();
+                        embeddingStore.add(embedding, segment);
+                      });
+                } catch (Exception e) {
+                  log.error("Error loading document from {}: {}", url, e.getMessage());
+                }
               });
     }
     log.info("EmbeddingStore is ready.");
@@ -67,14 +72,28 @@ public class HelloEmbeddingStore {
 
   @PostConstruct
   public void init() {
-    embeddingStore =
-        ChromaEmbeddingStore.builder()
-            .baseUrl("http://localhost:8000")
-            .collectionName("hello-embedding-store")
-            .logRequests(true)
-            .logResponses(true)
-            .build();
+    try {
+      log.info("Attempting to initialize ChromaEmbeddingStore...");
+      embeddingStore =
+          ChromaEmbeddingStore.builder()
+              .baseUrl("http://localhost:8000")
+              .collectionName("hello-embedding-store")
+              .logRequests(true)
+              .logResponses(true)
+              .build();
+      log.info("ChromaEmbeddingStore initialized successfully");
+    } catch (Exception e) {
+      log.warn(
+          "Failed to initialize ChromaEmbeddingStore: {}. Using InMemoryEmbeddingStore instead.",
+          e.getMessage());
+      embeddingStore = new InMemoryEmbeddingStore<>();
+    }
+
     embeddingModel = buildEmbeddingModel(getZhipuAiKey());
-    buildEmbeddingStore();
+    try {
+      buildEmbeddingStore();
+    } catch (Exception e) {
+      log.error("Error building embedding store: {}", e.getMessage());
+    }
   }
 }

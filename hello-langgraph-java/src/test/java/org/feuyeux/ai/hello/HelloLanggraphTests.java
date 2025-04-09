@@ -38,8 +38,16 @@ class HelloLanggraphTests {
 
   @BeforeAll
   public static void beforeAll() throws Exception {
-    useProxy();
+    // Disable any proxy settings that might interfere with tests
+    disableProxy();
     DotEnvConfig.load();
+  }
+
+  private static void disableProxy() {
+    System.clearProperty("http.proxyHost");
+    System.clearProperty("http.proxyPort");
+    System.clearProperty("https.proxyHost");
+    System.clearProperty("https.proxyPort");
   }
 
   private static void useProxy() {

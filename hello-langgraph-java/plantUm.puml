@@ -1,0 +1,41 @@
+@startuml Adaptive_RAG
+skinparam usecaseFontSize 14
+skinparam usecaseStereotypeFontSize 12
+skinparam hexagonFontSize 14
+skinparam hexagonStereotypeFontSize 12
+title "Adaptive RAG"
+footer
+
+powered by langgraph4j
+end footer
+circle start<<input>> as __START__
+circle stop as __END__
+usecase "web_search"<<Node>>
+usecase "retrieve"<<Node>>
+usecase "generate"<<Node>>
+usecase "grade_documents"<<Node>>
+usecase "transform_query"<<Node>>
+hexagon "check state" as condition1<<Condition>>
+hexagon "check state" as condition2<<Condition>>
+hexagon "check state" as startcondition<<Condition>>
+"__START__" -down-> "startcondition"
+"startcondition" -down-> "web_search": "web_search"
+'"__START__" -down-> "web_search": "web_search"
+"startcondition" -down-> "retrieve": "vectorstore"
+'"__START__" -down-> "retrieve": "vectorstore"
+"web_search" -down-> "generate"
+"retrieve" -down-> "grade_documents"
+"generate" -down-> "condition1"
+"condition1" -down-> "generate": "not supported"
+'"generate" -down-> "generate": "not supported"
+"condition1" -down-> "transform_query": "not useful"
+'"generate" -down-> "transform_query": "not useful"
+"condition1" -down-> "__END__": "useful"
+'"generate" -down-> "__END__": "useful"
+"grade_documents" -down-> "condition2"
+"condition2" -down-> "transform_query": "transform_query"
+'"grade_documents" -down-> "transform_query": "transform_query"
+"condition2" -down-> "generate": "generate"
+'"grade_documents" -down-> "generate": "generate"
+"transform_query" -down-> "retrieve"
+@enduml

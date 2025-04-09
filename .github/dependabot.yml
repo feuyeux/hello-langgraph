@@ -6,6 +6,10 @@
 version: 2
 updates:
   - package-ecosystem: "pip"
-    directory: "/"
+    directory: "hello-langgraph-python"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "maven"
+    directory: "hello-langgraph-java"
     schedule:
       interval: "daily"

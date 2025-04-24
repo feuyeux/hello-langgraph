@@ -23,7 +23,7 @@ python-dotenv==1.1.0
 #
 tavily-python==0.5.4
 #
-openai==1.75.0
+openai==1.76.0
 httpx
 httpx-sse
 PyJWT

@@ -10,7 +10,7 @@
 
     <properties>
         <java.version>21</java.version>
-        <spring-boot.version>3.5.3</spring-boot.version>
+        <spring-boot.version>3.5.4</spring-boot.version>
         <langgraph4j.version>1.5.14</langgraph4j.version>
         <langchain4j.version>0.36.2</langchain4j.version>
         <lombok.version>1.18.36</lombok.version>

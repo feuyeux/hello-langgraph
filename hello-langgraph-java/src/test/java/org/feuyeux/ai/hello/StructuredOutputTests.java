@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 
 @Slf4j
 public class StructuredOutputTests {
-  StructuredOutputFn structuredOutputFn =new StructuredOutputFn(getZhipuAiKey());
+  StructuredOutputFn structuredOutputFn = new StructuredOutputFn(getZhipuAiKey());
 
   @BeforeAll
   public static void beforeAll() throws Exception {

@@ -5,6 +5,7 @@ cd "$(
 )/" || exit
 
 source ./env
+# https://app.tavily.com/home
 echo "TAVILY_API_KEY=$TAVILY_API_KEY"
 echo "ZHIPUAI_API_KEY=$ZHIPUAI_API_KEY"
 

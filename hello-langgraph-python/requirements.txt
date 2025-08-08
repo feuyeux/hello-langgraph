@@ -5,7 +5,7 @@ langchain-openai==0.3.28
 langchain-ollama==0.3.6
 langchainhub==0.1.21
 #
-langgraph==0.6.3
+langgraph==0.6.4
 #
 scikit-learn==1.6.1
 # graphs drawing

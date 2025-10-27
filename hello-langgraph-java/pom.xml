@@ -13,7 +13,7 @@
         <spring-boot.version>3.5.7</spring-boot.version>
         <logback.version>1.5.20</logback.version>
         <lombok.version>1.18.42</lombok.version>
-        <langchain4j.version>1.7.1</langchain4j.version>
+        <langchain4j.version>1.8.0</langchain4j.version>
         <langgraph4j.version>1.7.0</langgraph4j.version>
     </properties>
 

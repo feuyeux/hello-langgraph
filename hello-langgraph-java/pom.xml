@@ -51,10 +51,15 @@
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/dev.langchain4j/langchain4j-zhipu-ai -->
+        <!-- https://mvnrepository.com/artifact/dev.langchain4j/langchain4j-core -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
-            <artifactId>langchain4j-zhipu-ai</artifactId>
+            <artifactId>langchain4j-core</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/dev.langchain4j/langchain4j-ollama -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-ollama</artifactId>
         </dependency>
         <dependency>
             <groupId>dev.langchain4j</groupId>

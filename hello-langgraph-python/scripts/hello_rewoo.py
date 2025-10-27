@@ -1,19 +1,13 @@
 from langgraph.graph import END, StateGraph, START
-from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain_community.tools import DuckDuckGoSearchResults
 from langchain_core.prompts import ChatPromptTemplate
 import re
 from typing_extensions import TypedDict
 from typing import List
-from langchain_community.chat_models import QianfanChatEndpoint
-from langchain_community.chat_models import ChatZhipuAI
-from dotenv import load_dotenv
-
-load_dotenv()
+from langchain_ollama import ChatOllama
 
 
-# model = ChatOpenAI(model="gpt-4o")
-# model = ChatZhipuAI(model="GLM-4-Plus")
-model = QianfanChatEndpoint(model="ERNIE-3.5-8K", timeout=60)
+model = ChatOllama(model="qwen2.5")
 
 
 prompt = """For the following task, make plans that can solve the problem step by step. For each plan, indicate \
@@ -47,7 +41,7 @@ result = model.invoke(prompt.format(task=task))
 
 print(result.content)
 
-search = TavilySearchResults()
+search = DuckDuckGoSearchResults(max_results=3)
 
 class ReWOO(TypedDict):
     task: str

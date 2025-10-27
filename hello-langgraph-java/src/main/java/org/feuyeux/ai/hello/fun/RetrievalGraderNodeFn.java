@@ -1,8 +1,8 @@
 package org.feuyeux.ai.hello.fun;
 
-import static org.feuyeux.ai.hello.repository.ChatModelBuilder.buildChatLanguageModel;
+import static org.feuyeux.ai.hello.repository.ChatModelBuilder.buildChatModel;
 
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.input.Prompt;
 import dev.langchain4j.model.input.structured.StructuredPrompt;
 import dev.langchain4j.model.input.structured.StructuredPromptProcessor;
@@ -40,7 +40,7 @@ public class RetrievalGraderNodeFn
 
   @Override
   public Score apply(Arguments args) {
-    ChatLanguageModel chatLanguageModel = buildChatLanguageModel(apiKey);
+    ChatModel chatLanguageModel = buildChatModel(apiKey);
     Service service = AiServices.create(Service.class, chatLanguageModel);
     Prompt prompt = StructuredPromptProcessor.toPrompt(args);
     return service.invoke(prompt.text());

@@ -1,8 +1,8 @@
 package org.feuyeux.ai.hello.fun;
 
-import static org.feuyeux.ai.hello.repository.ChatModelBuilder.buildChatLanguageModel;
+import static org.feuyeux.ai.hello.repository.ChatModelBuilder.buildChatModel;
 
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.UserMessage;
 import dev.langchain4j.service.V;
@@ -26,7 +26,7 @@ public class GenerationNodeFn implements BiFunction<String, List<String>, String
   String apiKey;
 
   public String apply(String question, List<String> context) {
-    ChatLanguageModel chatLanguageModel = buildChatLanguageModel(apiKey);
+    ChatModel chatLanguageModel = buildChatModel(apiKey);
     Service service = AiServices.create(Service.class, chatLanguageModel);
     return service.invoke(question, context); // service
   }

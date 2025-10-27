@@ -2,47 +2,31 @@ import datetime
 import json
 from typing import Annotated
 
-from dotenv import load_dotenv
-from langchain_community.chat_models import ChatZhipuAI
-from langchain_community.tools import DuckDuckGoSearchResults
 from langchain_community.tools.tavily_search import TavilySearchResults
-from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
 from langchain_community.utilities.tavily_search import TavilySearchAPIWrapper
 from langchain_core.messages import ToolMessage
 from langchain_core.output_parsers.openai_tools import PydanticToolsParser
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.tools import StructuredTool
-from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
 from langgraph.graph import END, StateGraph, START
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode
 from pydantic import BaseModel, Field
 from pydantic import ValidationError
 from typing_extensions import TypedDict
-import os
-
-load_dotenv()
 
 MAX_CRITIQUES = 1
 MAX_ITERATIONS = 1
 
-llama_model = ChatOpenAI(model="llama3.3", base_url="http://localhost:11434/v1", )
-zhipu_model = ChatZhipuAI(model="GLM-4-Plus", temperature=0)
-# in bind_tools raise NotImplementedError
-# kimi_model = MoonshotChat(model="moonshot-v1-8k", temperature=0)
-kimi_model = ChatOpenAI(model="moonshot-v1-8k",api_key=os.environ["MOONSHOT_API_KEY"], base_url="https://api.moonshot.cn/v1", )
+llama_model = ChatOllama(model="qwen2.5")
+llms = [llama_model, llama_model, llama_model]
 
-llms = [kimi_model, zhipu_model, llama_model]
+# 使用 DuckDuckGo 搜索（不需要 API key）
+from langchain_community.tools import DuckDuckGoSearchResults
+tavily = DuckDuckGoSearchResults(max_results=5)
 
-# https://api.tavily.com
-tavily = TavilySearchResults(
-    api_wrapper=TavilySearchAPIWrapper(), max_results=5)
-
-# https://duckduckgo.com/
-duck_duck_go = DuckDuckGoSearchResults(
-    api_wrapper=DuckDuckGoSearchAPIWrapper(), max_results=5, output_format="json")
-
-search_tools = [tavily, duck_duck_go]
+search_tools = [tavily]
 
 
 class Reflection(BaseModel):

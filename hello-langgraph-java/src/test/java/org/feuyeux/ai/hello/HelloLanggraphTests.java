@@ -2,8 +2,8 @@ package org.feuyeux.ai.hello;
 
 import static org.bsc.langgraph4j.GraphRepresentation.Type.MERMAID;
 import static org.bsc.langgraph4j.GraphRepresentation.Type.PLANTUML;
+import static org.feuyeux.ai.hello.service.LanggraphService.getOllamaBaseUrl;
 import static org.feuyeux.ai.hello.service.LanggraphService.getTavilyApiKey;
-import static org.feuyeux.ai.hello.service.LanggraphService.getZhipuAiKey;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -78,7 +78,7 @@ class HelloLanggraphTests {
 
   @Test
   public void testQuestionRouter() {
-    QuestionRouterEdgeFn qr = QuestionRouterEdgeFn.of(getZhipuAiKey());
+    QuestionRouterEdgeFn qr = QuestionRouterEdgeFn.of(getOllamaBaseUrl());
     QuestionRouterEdgeFn.Type result = qr.apply("What are the stock options?");
     assertEquals(QuestionRouterEdgeFn.Type.web_search, result);
 
@@ -106,7 +106,7 @@ class HelloLanggraphTests {
 
   @Test
   public void testRetrievalGrader() {
-    RetrievalGraderNodeFn grader = RetrievalGraderNodeFn.of(getZhipuAiKey());
+    RetrievalGraderNodeFn grader = RetrievalGraderNodeFn.of(getOllamaBaseUrl());
     // retrieve
     EmbeddingSearchResult<TextSegment> relevant = helloEmbeddingStore.search(question);
     List<EmbeddingMatch<TextSegment>> matches = relevant.matches();
@@ -128,14 +128,14 @@ class HelloLanggraphTests {
     EmbeddingSearchResult<TextSegment> relevantDocs = helloEmbeddingStore.search(question);
     List<String> docs =
         relevantDocs.matches().stream().map(m -> m.embedded().text()).collect(Collectors.toList());
-    GenerationNodeFn qr = GenerationNodeFn.of(getZhipuAiKey());
+    GenerationNodeFn qr = GenerationNodeFn.of(getOllamaBaseUrl());
     String result = qr.apply(question, docs);
     log.info("\n[Question]:\n{}\n[Generation result]:\n{}", question, result);
   }
 
   @Test
   public void testQuestionRewriter() {
-    QuestionRewriterNodeFn questionRewriterNodeFn = QuestionRewriterNodeFn.of(getZhipuAiKey());
+    QuestionRewriterNodeFn questionRewriterNodeFn = QuestionRewriterNodeFn.of(getOllamaBaseUrl());
     String result = questionRewriterNodeFn.apply(question);
     log.info("\n[Question]:\n{}\n[QuestionRewriter result]:\n{}", question, result);
   }
@@ -143,7 +143,7 @@ class HelloLanggraphTests {
   @Test
   public void testGraphing() throws Exception {
     AdaptiveRagGraph adaptiveRagGraph =
-        new AdaptiveRagGraph(getZhipuAiKey(), getTavilyApiKey(), helloEmbeddingStore);
+        new AdaptiveRagGraph(getOllamaBaseUrl(), getTavilyApiKey(), helloEmbeddingStore);
     StateGraph<AdaptiveRagGraph.State> graph = adaptiveRagGraph.buildGraph();
 
     GraphRepresentation plantUml = graph.getGraph(PLANTUML, "Adaptive RAG");

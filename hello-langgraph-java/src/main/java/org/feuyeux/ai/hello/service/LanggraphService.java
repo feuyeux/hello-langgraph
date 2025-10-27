@@ -18,10 +18,9 @@ public class LanggraphService {
 
   private CompiledGraph<AdaptiveRagGraph.State> graph;
 
-  // https://open.bigmodel.cn/usercenter/proj-mgmt/apikeys
-  public static String getZhipuAiKey() {
-    return DotEnvConfig.valueOf("ZHIPUAI_API_KEY")
-        .orElseThrow(() -> new IllegalArgumentException("no ZHIPUAI APIKEY provided!"));
+  // Ollama base URL
+  public static String getOllamaBaseUrl() {
+    return DotEnvConfig.valueOf("OLLAMA_BASE_URL").orElse("http://localhost:11434");
   }
 
   // https://app.tavily.com/
@@ -45,7 +44,7 @@ public class LanggraphService {
   public void init() {
     try {
       AdaptiveRagGraph adaptiveRagGraph =
-          new AdaptiveRagGraph(getZhipuAiKey(), getTavilyApiKey(), helloEmbeddingStore);
+          new AdaptiveRagGraph(getOllamaBaseUrl(), getTavilyApiKey(), helloEmbeddingStore);
       graph = adaptiveRagGraph.buildGraph().compile();
     } catch (Exception e) {
       log.error("", e);

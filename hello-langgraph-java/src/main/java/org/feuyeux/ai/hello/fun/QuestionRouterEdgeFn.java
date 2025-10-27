@@ -1,8 +1,8 @@
 package org.feuyeux.ai.hello.fun;
 
-import static org.feuyeux.ai.hello.repository.ChatModelBuilder.buildChatLanguageModel;
+import static org.feuyeux.ai.hello.repository.ChatModelBuilder.buildChatModel;
 
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.output.structured.Description;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.SystemMessage;
@@ -68,7 +68,7 @@ public class QuestionRouterEdgeFn implements Function<String, QuestionRouterEdge
 
   @Override
   public Type apply(String question) {
-    ChatLanguageModel chatLanguageModel = buildChatLanguageModel(apiKey);
+    ChatModel chatLanguageModel = buildChatModel(apiKey);
     Service extractor = AiServices.create(Service.class, chatLanguageModel);
     try {
       Result ds = extractor.invoke(question);

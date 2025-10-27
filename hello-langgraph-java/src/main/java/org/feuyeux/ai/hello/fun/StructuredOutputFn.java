@@ -1,8 +1,8 @@
 package org.feuyeux.ai.hello.fun;
 
-import static org.feuyeux.ai.hello.repository.ChatModelBuilder.buildChatLanguageModel;
+import static org.feuyeux.ai.hello.repository.ChatModelBuilder.buildChatModel;
 
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.output.structured.Description;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.SystemMessage;
@@ -13,11 +13,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class StructuredOutputFn implements Function<String, StructuredOutputFn.BizAction> {
   String apiKey;
-  ChatLanguageModel chatLanguageModel;
+  ChatModel chatLanguageModel;
 
   public StructuredOutputFn(String apiKey) {
     this.apiKey = apiKey;
-    chatLanguageModel = buildChatLanguageModel(apiKey);
+    chatLanguageModel = buildChatModel(apiKey);
   }
 
   @Override

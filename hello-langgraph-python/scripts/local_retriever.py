@@ -13,10 +13,13 @@ def vectorstore_retriever(collection_name):
     #     "https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/",
     #     "https://lilianweng.github.io/posts/2023-10-25-adv-attack-llm/",
     # ]
+    # Use paths relative to project root
+    import os
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     files = [
-        "data/LLM Powered Autonomous Agents.mhtml",
-        "data/Prompt Engineering.mhtml",
-        "data/Adversarial Attacks on LLMs.mhtml",
+        os.path.join(project_root, "data/LLM Powered Autonomous Agents.mhtml"),
+        os.path.join(project_root, "data/Prompt Engineering.mhtml"),
+        os.path.join(project_root, "data/Adversarial Attacks on LLMs.mhtml"),
     ]
     docs = [MHTMLLoader(Path(file)).load() for file in files]
     docs_list = [item for sublist in docs for item in sublist]

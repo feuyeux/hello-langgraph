@@ -1,6 +1,6 @@
 package org.feuyeux.ai.hello;
 
-import static org.feuyeux.ai.hello.service.LanggraphService.getZhipuAiKey;
+import static org.feuyeux.ai.hello.service.LanggraphService.getOllamaBaseUrl;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 
 @Slf4j
 public class StructuredOutputTests {
-  StructuredOutputFn structuredOutputFn = new StructuredOutputFn(getZhipuAiKey());
+  StructuredOutputFn structuredOutputFn = new StructuredOutputFn(getOllamaBaseUrl());
 
   @BeforeAll
   public static void beforeAll() throws Exception {

@@ -1,7 +1,7 @@
 package org.feuyeux.ai.hello.repository;
 
 import static org.feuyeux.ai.hello.repository.EmbeddingModelBuilder.buildEmbeddingModel;
-import static org.feuyeux.ai.hello.service.LanggraphService.getZhipuAiKey;
+import static org.feuyeux.ai.hello.service.LanggraphService.getOllamaBaseUrl;
 
 import dev.langchain4j.data.document.Document;
 import dev.langchain4j.data.document.DocumentSplitter;
@@ -10,7 +10,7 @@ import dev.langchain4j.data.document.parser.TextDocumentParser;
 import dev.langchain4j.data.document.splitter.DocumentByParagraphSplitter;
 import dev.langchain4j.data.embedding.Embedding;
 import dev.langchain4j.data.segment.TextSegment;
-import dev.langchain4j.model.zhipu.ZhipuAiEmbeddingModel;
+import dev.langchain4j.model.embedding.EmbeddingModel;
 import dev.langchain4j.store.embedding.EmbeddingMatch;
 import dev.langchain4j.store.embedding.EmbeddingSearchRequest;
 import dev.langchain4j.store.embedding.EmbeddingSearchResult;
@@ -25,7 +25,7 @@ import org.springframework.stereotype.Repository;
 @Slf4j
 @Repository
 public class HelloEmbeddingStore {
-  private ZhipuAiEmbeddingModel embeddingModel;
+  private EmbeddingModel embeddingModel;
   private EmbeddingStore<TextSegment> embeddingStore;
 
   public EmbeddingStore<TextSegment> buildEmbeddingStore() {
@@ -89,7 +89,7 @@ public class HelloEmbeddingStore {
       embeddingStore = new InMemoryEmbeddingStore<>();
     }
 
-    embeddingModel = buildEmbeddingModel(getZhipuAiKey());
+    embeddingModel = buildEmbeddingModel(getOllamaBaseUrl());
     try {
       buildEmbeddingStore();
     } catch (Exception e) {

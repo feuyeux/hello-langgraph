@@ -1,12 +1,10 @@
-from langchain_community.chat_models import ChatZhipuAI
-from langchain_community.chat_models import QianfanChatEndpoint
 from typing import Literal
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
 from pydantic import BaseModel, Field
 
 
-llm = ChatZhipuAI(model="GLM-4-Plus")
+llm = ChatOllama(model="qwen2.5")
 
 
 class BizAction(BaseModel):

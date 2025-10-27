@@ -1,52 +1,29 @@
 import asyncio
-import io
 import operator
-import os
 from typing import Annotated, List, Tuple
 from typing import Union
 
-# from PIL import Image as PilImage
-from dotenv import load_dotenv
-from langchain import hub
-from langchain_community.chat_models import ChatZhipuAI
-from langchain_community.tools import DuckDuckGoSearchResults
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-# from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
 from langgraph.graph import END
 from langgraph.graph import StateGraph, START
 from langgraph.prebuilt import create_react_agent
 from pydantic import BaseModel, Field
 from typing_extensions import TypedDict
 
-load_dotenv()
-
-# Define the models
-zhipu_model = ChatZhipuAI(model="GLM-4-Plus")
-# llama_model = ChatOpenAI(
-#     model="llama3.3", base_url="http://localhost:11434/v1")
-# kimi_model = ChatOpenAI(
-#     model="moonshot-v1-8k",
-#     api_key=os.environ["MOONSHOT_API_KEY"],
-#     base_url="https://api.moonshot.cn/v1",
-# )
-llm = zhipu_model
+# Define the model
+llm = ChatOllama(model="qwen2.5")
 
 # Define the tools
-# https://api.tavily.com
-tavily = TavilySearchResults(max_results=3)
-
-# https://duckduckgo.com/
-duck_duck_go = DuckDuckGoSearchResults(max_results=3, output_format="json")
+# 使用 DuckDuckGo 搜索（不需要 API key）
+from langchain_community.tools import DuckDuckGoSearchResults
+tavily = DuckDuckGoSearchResults(max_results=3)
 
 search_tools = [tavily]
 
 # Define the executor agent
 
-# https://smith.langchain.com/hub
-# https://smith.langchain.com/hub/ih/ih-react-agent-executor
-# prompt = hub.pull("ih/ih-react-agent-executor")
-# prompt.pretty_print()
 prompt = ChatPromptTemplate.from_messages([
     ("system", "You are a helpful assistant."),
     MessagesPlaceholder("messages")

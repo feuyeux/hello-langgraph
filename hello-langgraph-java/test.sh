@@ -4,9 +4,6 @@ cd "$(
     pwd -P
 )/" || exit
 
-source ./env
-echo "TAVILY_API_KEY=$TAVILY_API_KEY"
-echo "ZHIPUAI_API_KEY=$ZHIPUAI_API_KEY"
 
 # https://hub.docker.com/r/chromadb/chroma/tags
 

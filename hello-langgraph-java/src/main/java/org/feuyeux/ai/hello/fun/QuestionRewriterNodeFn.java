@@ -1,9 +1,9 @@
 package org.feuyeux.ai.hello.fun;
 
 import static org.bsc.langgraph4j.utils.CollectionsUtils.mapOf;
-import static org.feuyeux.ai.hello.repository.ChatModelBuilder.buildChatLanguageModel;
+import static org.feuyeux.ai.hello.repository.ChatModelBuilder.buildChatModel;
 
-import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.input.Prompt;
 import dev.langchain4j.model.input.PromptTemplate;
 import dev.langchain4j.service.AiServices;
@@ -25,7 +25,7 @@ public class QuestionRewriterNodeFn implements Function<String, String> {
 
   @Override
   public String apply(String question) {
-    ChatLanguageModel chatLanguageModel = buildChatLanguageModel(apiKey);
+    ChatModel chatLanguageModel = buildChatModel(apiKey);
     LLMService service = AiServices.create(LLMService.class, chatLanguageModel);
     PromptTemplate template =
         PromptTemplate.from(

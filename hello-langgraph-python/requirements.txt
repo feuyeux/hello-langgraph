@@ -21,7 +21,7 @@ lxml==6.0.2
 IPython==9.8.0
 python-dotenv==1.2.1
 #
-tavily-python==0.7.16
+tavily-python==0.7.17
 #
 openai==2.14.0
 httpx

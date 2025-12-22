@@ -11,7 +11,7 @@
     <properties>
         <java.version>21</java.version>
         <spring-boot.version>4.0.1</spring-boot.version>
-        <logback.version>1.5.22</logback.version>
+        <logback.version>1.5.23</logback.version>
         <lombok.version>1.18.42</lombok.version>
         <langchain4j.version>1.9.1</langchain4j.version>
         <langgraph4j.version>1.7.7</langgraph4j.version>

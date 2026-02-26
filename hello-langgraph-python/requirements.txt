@@ -1,4 +1,4 @@
-langchain-core==1.2.15
+langchain-core==1.2.16
 langchain==1.2.10
 langchain-community==0.4.1
 langchain-openai==1.1.10

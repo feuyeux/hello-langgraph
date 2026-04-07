@@ -2,7 +2,7 @@ langchain-core==1.2.25
 langchain==1.2.15
 langchain-community==0.4.1
 langchain-openai==1.1.12
-langchain-ollama==1.0.1
+langchain-ollama==1.1.0
 langchainhub==0.1.21
 #
 langgraph==1.1.4

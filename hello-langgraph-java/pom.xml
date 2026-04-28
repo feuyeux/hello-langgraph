@@ -14,7 +14,7 @@
         <logback.version>1.5.32</logback.version>
         <lombok.version>1.18.46</lombok.version>
         <langchain4j.version>1.13.1</langchain4j.version>
-        <langgraph4j.version>1.8.13</langgraph4j.version>
+        <langgraph4j.version>1.8.14</langgraph4j.version>
     </properties>
 
     <!-- Optional: Add the Bill of Materials (BOM) to manage langgraph4j module versions -->

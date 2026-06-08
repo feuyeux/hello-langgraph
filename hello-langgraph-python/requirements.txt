@@ -12,7 +12,7 @@ scikit-learn==1.9.0
 grandalf==0.8
 Pillow==12.2.0
 # scrape information from web pages
-beautifulsoup4==4.14.3
+beautifulsoup4==4.15.0
 #
 chromadb==1.5.9
 tiktoken==0.13.0

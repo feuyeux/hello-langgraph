@@ -19,7 +19,7 @@ tiktoken==0.13.0
 lxml==6.1.1
 #
 IPython==9.16.1
-python-dotenv==1.2.2
+python-dotenv==1.2.3
 #
 tavily-python==0.7.27
 #

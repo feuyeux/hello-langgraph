@@ -15,7 +15,7 @@ Pillow==12.3.0
 beautifulsoup4==4.15.0
 #
 chromadb==1.5.9
-tiktoken==0.13.0
+tiktoken==0.14.0
 lxml==6.1.1
 #
 IPython==9.16.1

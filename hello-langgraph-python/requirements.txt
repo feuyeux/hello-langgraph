@@ -10,7 +10,7 @@ langgraph==1.2.13
 scikit-learn==1.9.1
 # graphs drawing
 grandalf==0.8
-Pillow==12.3.0
+Pillow==13.0.0
 # scrape information from web pages
 beautifulsoup4==4.15.0
 #
